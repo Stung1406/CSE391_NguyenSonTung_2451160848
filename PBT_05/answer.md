@@ -2,34 +2,34 @@
 
 ## Câu A1 — Viewport & Mobile-First
 
-1. Thẻ `<meta viewport>` chuẩn
+1. Cấu trúc chuẩn của thẻ `<meta viewport>`
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 ```
 
-_Giải thích_
+_Thành phần và chức năng_
 
-- `name="viewport"`: Báo cho trình duyệt biết đây là cấu hình viewport (khu vực hiển thị).
-- `content`: Chứa các giá trị cấu hình, cách nhau bởi dấu phẩy.
-- `width=device-width`: Cho viewport rộng bằng chiều rộng màn hình thiết bị (VD iPhone 14 = 390px). Không có thì trình duyệt mặc định ~980px rồi thu nhỏ lại.
-- `initial-scale=1.0`: Zoom ban đầu = 100%, không zoom in/out tự động.
+- `name="viewport"`: Thông báo cho trình duyệt rằng đây là thiết lập quản lý viewport (vùng hiển thị của trang).
+- `content`: Lưu trữ các thông số cấu hình, được phân tách bằng dấu phẩy.
+- `width=device-width`: Đặt chiều rộng viewport bằng chiều rộng của thiết bị (ví dụ: iPhone 14 có chiều rộng 390px). Nếu không có, trình duyệt sẽ mặc định sử dụng ~980px và thu nhỏ nội dung.
+- `initial-scale=1.0`: Xác định tỷ lệ phóng to ban đầu ở mức 100%, tránh zoom tự động.
 
-2. Nếu THIẾU thẻ này, iPhone sẽ hiển thị trang web như thế nào?
+2. Hậu quả khi thiếu thẻ `<meta viewport>`
 
-iPhone sẽ coi trang là trang desktop và thu nhỏ lại cho vắt vừa màn hình. Kết quả:
+Khi thẻ này vắng mặt, iPhone sẽ coi trang web là nội dung desktop tiêu chuẩn và sẽ tiến hành thu nhỏ toàn bộ để phù hợp với màn hình. Điều này gây ra những vấn đề sau:
 
-- Chuỗi nhỏ xíu, phải zoom in mới đọc được
-- Scroll ngang liên tục vì viewport mặc định (980px) rộng hơn màn hình (375-430px)
-- Nút bấm chồng lên nhau, layout dồn nát
-- Ảnh thiết kế cho desktop bị tràn ra ngoài
+- Văn bản và nội dung trở nên quá nhỏ, người dùng buộc phải phóng to để đọc được
+- Cần cuộn ngang liên tục vì viewport mặc định (980px) vượt quá chiều rộng màn hình (375-430px)
+- Các phần tử tương tác như nút bấm bị chồng chéo, gây khó khăn trong việc sử dụng
+- Hình ảnh được thiết kế cho desktop sẽ tràn ra ngoài màn hình thiết bị di động
 
-3. Mobile-First và Desktop-First khác nhau thế nào? Viết ví dụ CSS cho mỗi cách với breakpoint 768px. Tại sao Mobile-First được khuyên dùng?
+3. So sánh phương pháp Mobile-First và Desktop-First với CSS. Giải thích tại sao Mobile-First được khuyến cáo?
 
-- Mobile-First (khuyên dùng) — dùng `min-width`
+- **Phương pháp Mobile-First** (khuyến khích sử dụng) — sử dụng `min-width`
 
 ```css
-/* Mặc định: mobile */
+/* Cơ sở: quy tắc CSS cho thiết bị di động */
 .container {
   display: flex;
   flex-direction: column;
@@ -42,7 +42,7 @@ iPhone sẽ coi trang là trang desktop và thu nhỏ lại cho vắt vừa màn
   width: 100%;
 }
 
-/* Tablet trở lên (>= 768px) */
+/* Khi kích thước >= 768px (máy tính bảng trở lên) */
 @media (min-width: 768px) {
   .container {
     flex-direction: row;
@@ -58,12 +58,12 @@ iPhone sẽ coi trang là trang desktop và thu nhỏ lại cho vắt vừa màn
 }
 ```
 
-Mobile: 1 cột, ẩn sidebar. Tablet trở lên: 2 cột, hiện sidebar.
+Cấu trúc: Thiết bị di động hiển thị 1 cột và sidebar bị ẩn. Từ máy tính bảng trở lên, chuyển thành 2 cột và hiện sidebar.
 
-- Desktop-First (cách cũ) — dùng `max-width`
+- **Phương pháp Desktop-First** (phương pháp cũ) — sử dụng `max-width`
 
 ```css
-/* Mặc định: desktop */
+/* Cơ sở: quy tắc CSS cho máy tính để bàn */
 .container {
   display: flex;
   flex-direction: row;
@@ -78,7 +78,7 @@ Mobile: 1 cột, ẩn sidebar. Tablet trở lên: 2 cột, hiện sidebar.
   width: calc(100% - 200px - 24px);
 }
 
-/* Mobile (< 768px) */
+/* Khi kích thước < 768px (thiết bị di động) */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -93,11 +93,12 @@ Mobile: 1 cột, ẩn sidebar. Tablet trở lên: 2 cột, hiện sidebar.
 }
 ```
 
-Desktop: 2 cột. Thu nhỏ xuống mobile: chuyển về 1 cột, ẩn sidebar.
+Cấu trúc: Máy tính để bàn hiển thị 2 cột. Khi kích thước giảm xuống dưới 768px, chuyển thành 1 cột và ẩn sidebar.
 
-- Mobile chỉ tải CSS mặc định (cho mobile), bỏ qua media query `min-width` → tải ít CSS hơn, nhanh hơn.
-- Desktop-First ngược lại: mobile phải tải toàn bộ CSS desktop rồi mới ghi đè bằng `max-width` → lãng phí.
-- 60% traffic từ mobile, ưu tiên mobile trước = phục vụ đúng phần lớn người dùng.
+- **Lý do Mobile-First được ưu tiên:**
+  - Trên thiết bị di động, chỉ tải CSS cơ sở (dành cho di động) và bỏ qua media query `min-width`, tiết kiệm lượng dữ liệu và tăng tốc độ tải.
+  - Phương pháp Desktop-First có xu hướng ngược lại: thiết bị di động phải tải toàn bộ CSS cho desktop trước, rồi mới ghi đè bằng `max-width` → lãng phí tài nguyên.
+  - Xét theo thống kê, 60% lưu lượng web đến từ thiết bị di động, vì vậy ưu tiên di động trước = phục vụ đúng đối tượng người dùng chính.
 - Code dễ đọc hơn: thêm styles theo thứ tự từ nhỏ đến lớn, ít xung đột hơn.
 
 ## Câu A2 — Breakpoints
