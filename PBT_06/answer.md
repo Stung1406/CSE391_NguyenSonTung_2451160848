@@ -48,3 +48,65 @@ Có thể dùng `col-12` thay cho `col-sm-12` vì `col-12` áp dụng cho mọi 
 
 ```
 ```
+## Câu A2 — Utilities & Components
+
+### 1. Giải thích `d-none d-md-block`
+
+- `d-none` áp dụng từ xs (0px) trở lên: `display: none` → ẩn element.
+- `d-md-block` áp dụng từ md (>= 768px) trở lên: `display: block` → hiển thị element.
+
+### Kết quả
+
+| Màn hình | Kích thước | Trạng thái |
+| -------- | ---------- | ---------- |
+| Mobile   | < 768px    | Ẩn         |
+| Tablet   | >= 768px   | Hiện       |
+| Desktop  | >= 992px   | Hiện       |
+
+### Dùng khi nào?
+
+Thường dùng để ẩn một element trên mobile (ví dụ: sidebar, banner quảng cáo hoặc navigation desktop), nhưng hiển thị lại từ tablet trở lên.
+
+---
+
+### 2. Liệt kê 5 spacing utilities (margin/padding)
+
+- `m` = margin, `p` = padding
+- Direction:
+  - `t` = top
+  - `b` = bottom
+  - `s` = start/left
+  - `e` = end/right
+  - `x` = trái + phải
+  - `y` = trên + dưới
+  - bỏ trống = cả 4 phía
+- Size: `0 / 1 / 2 / 3 / 4 / 5 / auto`
+
+| Class     | CSS tương đương                 | Giải thích |
+| --------- | ------------------------------- | ---------- |
+| `mt-3`    | margin-top: 1rem                | Margin phía trên 1rem (16px) |
+| `px-4`    | padding-left & right: 1.5rem    | Padding hai bên trái/phải 1.5rem |
+| `mb-auto` | margin-bottom: auto             | Đẩy element xuống cuối trong flexbox |
+| `my-2`    | margin-top & bottom: 0.5rem     | Margin trên và dưới 0.5rem (8px) |
+| `p-0`     | padding: 0                      | Xóa toàn bộ padding |
+
+---
+
+### 3. Sự khác nhau giữa `.container`, `.container-fluid` và `.container-md`
+
+| Class              | Ý nghĩa |
+| ------------------ | -------- |
+| `.container`       | Có `max-width` cố định theo từng breakpoint và tự căn giữa |
+| `.container-fluid` | Luôn chiếm toàn bộ chiều ngang (`100%`) ở mọi kích thước màn hình |
+| `.container-md`    | Full width dưới md (`< 768px`), chuyển sang fixed width từ md trở lên |
+
+### Khi nào nên dùng?
+
+- `.container`  
+  Dùng cho nội dung chính như bài viết, form hoặc layout cần giới hạn độ rộng để dễ đọc.
+
+- `.container-fluid`  
+  Dùng cho hero banner, navbar full width hoặc các section có background tràn toàn màn hình.
+
+- `.container-md`  
+  Dùng khi muốn giao diện full width trên mobile để tiết kiệm không gian, nhưng có `max-width` từ tablet trở lên để bố cục gọn gàng hơn.
