@@ -65,3 +65,4 @@ console.log("\n=== BEST PRACTICES ===");
 console.log("✓ Dùng const mặc định");
 console.log("✓ Dùng let khi cần reassign");
 console.log("✗ Tránh dùng var");
+
