@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Game: Đoán Số</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        
+        .info {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            background: #764ba2;
+        }
+        
+        .result {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .result.correct {
+            background: #4caf50;
+            color: white;
+        }
+        
+        .result.higher {
+            background: #2196f3;
+            color: white;
+        }
+        
+        .result.lower {
+            background: #ff9800;
+            color: white;
+        }
+        
+        .result.error {
+            background: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 Mini Game: Đoán Số</h1>
+        
+        <div class="info">
+            <p>Máy sẽ chọn 1 số từ 1-100</p>
+            <p>Bạn có <strong>7 lần</strong> để đoán đúng</p>
+        </div>
+        
+        <div id="result"></div>
+        <div id="guessInfo"></div>
+        
+        <button onclick="startGame()">🎯 Bắt đầu chơi</button>
+    </div>
+    
+    <script src="guess.js"></script>
+</body>
+</html>
