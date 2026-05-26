@@ -110,3 +110,7 @@ Thường dùng để ẩn một element trên mobile (ví dụ: sidebar, banner
 
 - `.container-md`  
   Dùng khi muốn giao diện full width trên mobile để tiết kiệm không gian, nhưng có `max-width` từ tablet trở lên để bố cục gọn gàng hơn.
+
+
+
+  

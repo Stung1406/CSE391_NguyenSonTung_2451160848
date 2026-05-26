@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        .carousel-item {
+            height: 500px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .product-image {
+            height: 250px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+        }
+        
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#">ShopHub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <form class="d-flex ms-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search...">
+                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                </form>
+                <a class="ms-3" href="#">
+                    <i class="bi bi-bag fs-5"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div>
+                    <h1 class="display-4 fw-bold mb-4">Summer Collection 2024</h1>
+                    <p class="fs-5 mb-4">Discover amazing products at great prices</p>
+                    <button class="btn btn-light btn-lg">Shop Now</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div>
+                    <h1 class="display-4 fw-bold mb-4">Up to 50% Off</h1>
+                    <p class="fs-5 mb-4">Limited time offer on selected items</p>
+                    <button class="btn btn-light btn-lg">View Deals</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div>
+                    <h1 class="display-4 fw-bold mb-4">New Arrivals</h1>
+                    <p class="fs-5 mb-4">Check out our latest collection</p>
+                    <button class="btn btn-light btn-lg">Explore</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Featured Products</h2>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="card h-100 shadow-sm">
+                        <div class="product-image">
+                            <i class="bi bi-bag"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title">Premium Bag</h5>
+                                <span class="badge bg-danger">Sale</span>
+                            </div>
+                            <p class="card-text text-muted small">High quality leather bag perfect for everyday use</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold text-primary">$49.99</span>
+                                <del class="text-muted">$79.99</del>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-top">
+                            <button class="btn btn-primary w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#productModal1">
+                                Quick View
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="card h-100 shadow-sm">
+                        <div class="product-image">
+                            <i class="bi bi-watch"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title">Smart Watch</h5>
+                                <span class="badge bg-danger">Sale</span>
+                            </div>
+                            <p class="card-text text-muted small">Latest technology smartwatch with health tracking</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold text-primary">$149.99</span>
+                                <del class="text-muted">$199.99</del>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-top">
+                            <button class="btn btn-primary w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#productModal2">
+                                Quick View
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="card h-100 shadow-sm">
+                        <div class="product-image">
+                            <i class="bi bi-headphones"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title">Headphones</h5>
+                                <span class="badge bg-warning">New</span>
+                            </div>
+                            <p class="card-text text-muted small">Wireless headphones with noise cancellation</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold text-primary">$89.99</span>
+                                <del class="text-muted">$119.99</del>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-top">
+                            <button class="btn btn-primary w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#productModal3">
+                                Quick View
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="card h-100 shadow-sm">
+                        <div class="product-image">
+                            <i class="bi bi-phone"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title">Phone Case</h5>
+                                <span class="badge bg-danger">Sale</span>
+                            </div>
+                            <p class="card-text text-muted small">Durable phone case with premium protection</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold text-primary">$19.99</span>
+                                <del class="text-muted">$39.99</del>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-top">
+                            <button class="btn btn-primary w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#productModal4">
+                                Quick View
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="productModal1" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Premium Bag - Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="product-image mb-3">
+                        <i class="bi bi-bag" style="font-size: 80px;"></i>
+                    </div>
+                    <p><strong>Price:</strong> $49.99</p>
+                    <p><strong>Description:</strong> High quality leather bag perfect for everyday use. Features multiple compartments and durable straps.</p>
+                    <p><strong>Material:</strong> Premium Leather</p>
+                    <p><strong>Warranty:</strong> 1 Year</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Smart Watch - Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="product-image mb-3">
+                        <i class="bi bi-watch" style="font-size: 80px;"></i>
+                    </div>
+                    <p><strong>Price:</strong> $149.99</p>
+                    <p><strong>Description:</strong> Latest technology smartwatch with health tracking, heart rate monitor, and 7-day battery life.</p>
+                    <p><strong>Features:</strong> Water Resistant, Sleep Tracking, Fitness Modes</p>
+                    <p><strong>Warranty:</strong> 2 Years</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal3" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Headphones - Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="product-image mb-3">
+                        <i class="bi bi-headphones" style="font-size: 80px;"></i>
+                    </div>
+                    <p><strong>Price:</strong> $89.99</p>
+                    <p><strong>Description:</strong> Wireless headphones with active noise cancellation, superior sound quality, and 30-hour battery life.</p>
+                    <p><strong>Features:</strong> Bluetooth 5.0, Touch Controls, Foldable Design</p>
+                    <p><strong>Warranty:</strong> 18 Months</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal4" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Phone Case - Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="product-image mb-3">
+                        <i class="bi bi-phone" style="font-size: 80px;"></i>
+                    </div>
+                    <p><strong>Price:</strong> $19.99</p>
+                    <p><strong>Description:</strong> Durable phone case with premium protection, scratch-resistant coating, and shock absorption technology.</p>
+                    <p><strong>Material:</strong> TPU + Polycarbonate</p>
+                    <p><strong>Compatibility:</strong> All iPhone Models</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12 mb-4">
+                    <h5 class="mb-3">About Us</h5>
+                    <p class="text-muted">ShopHub is your trusted e-commerce platform offering quality products at affordable prices.</p>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 mb-4">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-muted text-decoration-none">Home</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Products</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Deals</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 mb-4">
+                    <h5 class="mb-3">Customer Service</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-muted text-decoration-none">Contact Us</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Shipping Info</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Returns</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 mb-4">
+                    <h5 class="mb-3">Follow Us</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-muted">
+                            <i class="bi bi-facebook fs-5"></i>
+                        </a>
+                        <a href="#" class="text-muted">
+                            <i class="bi bi-twitter fs-5"></i>
+                        </a>
+                        <a href="#" class="text-muted">
+                            <i class="bi bi-instagram fs-5"></i>
+                        </a>
+                        <a href="#" class="text-muted">
+                            <i class="bi bi-youtube fs-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <div class="text-center">
+                <p class="text-muted mb-0">&copy; 2024 ShopHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
