@@ -66,7 +66,6 @@ function playGame() {
                 `<p>Các số bạn đã đoán: ${guessedNumbers.join(', ')}</p>`;
             break;
         } else if (guess > secretNumber) {
-            // Số đoán quá cao
             let resultDiv = document.getElementById('result');
             resultDiv.innerHTML = 
                 `<div class="result lower">
@@ -74,7 +73,6 @@ function playGame() {
                     <br><small>Còn ${maxAttempts - attempts} lần</small>
                 </div>`;
         } else {
-            // Số đoán quá thấp
             let resultDiv = document.getElementById('result');
             resultDiv.innerHTML = 
                 `<div class="result higher">
@@ -84,7 +82,6 @@ function playGame() {
         }
     }
     
-    // Hết lượt - thua
     if (gameActive || (attempts >= maxAttempts && attempts > 0 && guessedNumbers[guessedNumbers.length - 1] !== secretNumber)) {
         let resultDiv = document.getElementById('result');
         resultDiv.innerHTML = 
