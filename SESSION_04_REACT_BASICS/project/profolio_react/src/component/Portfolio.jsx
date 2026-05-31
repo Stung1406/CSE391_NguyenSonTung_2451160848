@@ -8,7 +8,7 @@ function Portfolio() {
   const categories = ["all", "web", "mobile", "design"];
 
   const filteredItems = filter === "all" ? projects : projects.filter((item) => item.category === filter);
-
+// [FEATURE] Render project list from state    
   return (
     <section id="portfolio" className="portfolio">
       <div className="container">
