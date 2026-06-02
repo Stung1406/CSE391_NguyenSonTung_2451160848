@@ -1,13 +1,12 @@
 import { useState } from "react";
-import { projects } from "../data/profolio";
-import ProjectCard from "./ProjectCard";
+import { portfolioItems } from "../data/portfolio";
 
 function Portfolio() {
   const [filter, setFilter] = useState("all");
 
   const categories = ["all", "web", "mobile", "design"];
 
-  const filteredItems = filter === "all" ? projects : projects.filter((item) => item.category === filter);
+  const filteredItems = filter === "all" ? portfolioItems : portfolioItems.filter((item) => item.category === filter);
 // [FEATURE] Render project list from state    
   return (
     <section id="portfolio" className="portfolio">
