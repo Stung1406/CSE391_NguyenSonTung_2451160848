@@ -1,14 +1,14 @@
-# Exercise 1.2 — About + Skills Section
+## Exercise 1.2 — About + Skills Section
 
-## 🎬 Opening Scenario
+#### 🎬 Opening Scenario
 
 *Sau khi hoàn thành hero section, bạn cần xây dựng phần giới thiệu bản thân (About) và hiển thị kỹ năng (Skills) với progress bars.*
 
 ---
 
-## 📋 Requirements
+#### 📋 Requirements
 
-### 1. About Section
+###### 1. About Section
 
 ```html
 <section id="about" class="about-section">
@@ -33,7 +33,7 @@
 - Avatar/image có border-radius (circle hoặc rounded)
 - Text có hierarchy: heading, lead paragraph, body text
 
-### 2. Skills Section
+###### 2. Skills Section
 
 ```html
 <section id="skills" class="skills-section">
@@ -59,24 +59,24 @@
 
 ---
 
-## 🎨 Design Specs
+#### 🎨 Design Specs
 
-### About Section
+###### About Section
 - Avatar size: 300x300px (desktop), 200x200px (mobile)
 - Gap between image và text: 3rem
 - Lead text: 1.25rem, font-weight: 300
 
-### Skills Section
+###### Skills Section
 - Skill bar height: 12px
-- Skill bar background: #e2e8f0
+- Skill bar background: ##e2e8f0
 - Progress fill: gradient (primary → secondary)
 - Animation: width transition 1s ease-out
 
 ---
 
-## 🐛 Hints
+#### 🐛 Hints
 
-### CSS Grid for About
+###### CSS Grid for About
 ```css
 .about-grid {
     display: grid;
@@ -90,7 +90,7 @@
 }
 ```
 
-### Progress Bar Animation
+###### Progress Bar Animation
 ```css
 .skill-progress {
     background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
@@ -103,10 +103,10 @@
 .skill-progress.animate { width: 95%; }
 ```
 
-### Skill Bar Structure
+###### Skill Bar Structure
 ```css
 .skill-bar {
-    background: #e2e8f0;
+    background: ##e2e8f0;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -114,7 +114,7 @@
 
 ---
 
-## ✅ Success Criteria
+#### ✅ Success Criteria
 
 - [ ] About section responsive (2 col → 1 col)
 - [ ] Avatar circular và responsive
@@ -124,7 +124,7 @@
 
 ---
 
-## 📝 Commit Messages Expected
+#### 📝 Commit Messages Expected
 
 ```
 [STYLE] Create about section layout

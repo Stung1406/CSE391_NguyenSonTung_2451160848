@@ -1,4 +1,4 @@
-## Sơ đồ cây component
+#### Sơ đồ cây component
 
 ```
 App
@@ -9,7 +9,7 @@ App
 └── Footer { text: string }
 ```
 
-## Props từng component
+#### Props từng component
 
 | Component   | Props                       | Kiểu          |
 | ----------- | --------------------------- | ------------- |
@@ -19,7 +19,7 @@ App
 | ProductCard | name, price, image          | string        |
 | Footer      | text                        | string        |
 
-## Lý do tách
+#### Lý do tách
 
 - ProductCard: lặp lại 4 lần → tách ra dùng `.map()`
 - Navbar: xuất hiện ở mọi trang → tái sử dụng

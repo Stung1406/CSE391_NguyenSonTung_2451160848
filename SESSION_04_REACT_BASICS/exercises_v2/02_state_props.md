@@ -1,6 +1,6 @@
-# Exercise 4.2 — State + Props
+## Exercise 4.2 — State + Props
 
-## 🎬 Opening Scenario
+#### 🎬 Opening Scenario
 
 *Thêm state management cho portfolio items. Data sẽ được lưu trong useState và render ra giao diện.*
 
@@ -10,9 +10,9 @@
 
 ---
 
-## 📋 Requirements
+#### 📋 Requirements
 
-### 1. Projects Data Array
+###### 1. Projects Data Array
 
 ```javascript
 // src/data/projects.js
@@ -52,7 +52,7 @@ export const projects = [
 ];
 ```
 
-### 2. Portfolio Component với useState
+###### 2. Portfolio Component với useState
 
 ```jsx
 // src/components/Portfolio.jsx
@@ -90,7 +90,7 @@ function Portfolio() {
 export default Portfolio;
 ```
 
-### 3. ProjectCard Component
+###### 3. ProjectCard Component
 
 ```jsx
 // src/components/ProjectCard.jsx
@@ -119,7 +119,7 @@ export default ProjectCard;
 
 ---
 
-## 🎨 Styling
+#### 🎨 Styling
 
 ```css
 /* src/components/Portfolio.module.css */
@@ -164,7 +164,7 @@ export default ProjectCard;
 
 ---
 
-## ✅ Success Criteria
+#### ✅ Success Criteria
 
 - [ ] Projects loaded from state
 - [ ] ProjectCard renders all props

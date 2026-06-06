@@ -1,17 +1,17 @@
 Dưới đây là **file Markdown hoàn chỉnh** để bạn copy thẳng:
 
 ````md
-# 📘 Phần A: Kiểm tra đọc hiểu
+## 📘 Phần A: Kiểm tra đọc hiểu
 
 ---
 
-## 🧩 Câu A1 — DOM Tree
+#### 🧩 Câu A1 — DOM Tree
 
-### 🌳 Sơ đồ DOM Tree
+###### 🌳 Sơ đồ DOM Tree
 
 ```text
 document
-└── div#app
+└── div##app
     ├── header
     │   ├── h1 → "Todo App"
     │   └── nav
@@ -20,50 +20,50 @@ document
     │       └── a → "Completed"
     │
     └── main
-        ├── form#todoForm
-        │   ├── input#todoInput
+        ├── form##todoForm
+        │   ├── input##todoInput
         │   └── button → "Add"
         │
-        └── ul#todoList
+        └── ul##todoList
             ├── li.todo-item → "Learn HTML"
             └── li.todo-item.completed → "Learn CSS"
 ````
 
 ---
 
-### 🎯 querySelector / querySelectorAll
+###### 🎯 querySelector / querySelectorAll
 
-#### 📌 Chọn thẻ `h1`
+######## 📌 Chọn thẻ `h1`
 
 ```js
 document.querySelector("h1");
 ```
 
-#### 📌 Chọn input trong form
+######## 📌 Chọn input trong form
 
 ```js
-document.querySelector("#todoForm input");
+document.querySelector("##todoForm input");
 ```
 
-#### 📌 Chọn tất cả `.todo-item`
+######## 📌 Chọn tất cả `.todo-item`
 
 ```js
 document.querySelectorAll(".todo-item");
 ```
 
-#### 📌 Chọn link đang active
+######## 📌 Chọn link đang active
 
 ```js
 document.querySelector("a.active");
 ```
 
-#### 📌 Chọn li đầu tiên trong `#todoList`
+######## 📌 Chọn li đầu tiên trong `##todoList`
 
 ```js
-document.querySelector("#todoList li");
+document.querySelector("##todoList li");
 ```
 
-#### 📌 Chọn tất cả link trong nav
+######## 📌 Chọn tất cả link trong nav
 
 ```js
 document.querySelectorAll("nav a");
@@ -71,7 +71,7 @@ document.querySelectorAll("nav a");
 
 ---
 
-## ⚖️ Câu A2 — innerHTML vs textContent
+#### ⚖️ Câu A2 — innerHTML vs textContent
 
 | Tiêu chí    | textContent | innerHTML         |
 | ----------- | ----------- | ----------------- |
@@ -82,7 +82,7 @@ document.querySelectorAll("nav a");
 
 ---
 
-### 🧪 Ví dụ
+###### 🧪 Ví dụ
 
 ```js
 element.textContent = "<b>Hello</b>";
@@ -94,7 +94,7 @@ element.innerHTML = "<b>Hello</b>";
 
 ---
 
-### 📌 Khi nào dùng textContent
+###### 📌 Khi nào dùng textContent
 
 * Hiển thị dữ liệu user nhập
 * Hiển thị text đơn giản
@@ -102,34 +102,34 @@ element.innerHTML = "<b>Hello</b>";
 
 ---
 
-### 📌 Khi nào dùng innerHTML
+###### 📌 Khi nào dùng innerHTML
 
 * Render template HTML do dev tạo
 * Hiển thị list từ data đã kiểm soát
 
 ---
 
-### ⚠️ XSS Warning
+###### ⚠️ XSS Warning
 
 ❌ Sai:
 
 ```js
-document.querySelector("#result").innerHTML = userInput;
+document.querySelector("##result").innerHTML = userInput;
 ```
 
 ✅ Đúng:
 
 ```js
-document.querySelector("#result").textContent = userInput;
+document.querySelector("##result").textContent = userInput;
 ```
 
 ---
 
-## 🌊 Câu A3 — Event Bubbling
+#### 🌊 Câu A3 — Event Bubbling
 
 ---
 
-### 🔥 Không có stopPropagation
+###### 🔥 Không có stopPropagation
 
 ```text
 BUTTON
@@ -144,7 +144,7 @@ OUTER
 
 ---
 
-### 🛑 Có stopPropagation
+###### 🛑 Có stopPropagation
 
 ```text
 BUTTON
@@ -157,7 +157,7 @@ BUTTON
 
 ---
 
-## 💡 Tổng kết
+#### 💡 Tổng kết
 
 * DOM Tree = cấu trúc HTML dạng cây
 * querySelector = chọn 1 phần tử
@@ -176,13 +176,13 @@ Nếu bạn muốn, mình có thể nâng cấp tiếp thành:
 - 🚀 hoặc bộ đề JS DOM + event giống đề thi luôn
 ``
 
-# Phần C: Debug và Phân tích
+## Phần C: Debug và Phân tích
 
 ---
 
-# Câu C1 — Debug DOM Code
+## Câu C1 — Debug DOM Code
 
-## Code đã sửa
+#### Code đã sửa
 
 ```javascript
 const countDisplay = document.querySelector(".count");
@@ -201,20 +201,20 @@ function addHistory(msg) {
   historyList.appendChild(li);
 }
 
-document.querySelector("#incrementBtn").addEventListener("click", function () {
+document.querySelector("##incrementBtn").addEventListener("click", function () {
   count++;
   countDisplay.textContent = count;
   addHistory("Count changed to " + count);
 });
 
 // Fix 1: "onclick" → "click"
-document.querySelector("#decrementBtn").addEventListener("click", function () {
+document.querySelector("##decrementBtn").addEventListener("click", function () {
   count--;
   countDisplay.textContent = count;
   addHistory("Count changed to " + count);
 });
 
-document.querySelector("#resetBtn").addEventListener("click", () => {
+document.querySelector("##resetBtn").addEventListener("click", () => {
   count = 0;
 
   // Fix 2
@@ -231,7 +231,7 @@ function deleteHistory(element) {
   element.parentNode.removeChild(element);
 }
 
-document.querySelector("#clearHistory").addEventListener("click", () => {
+document.querySelector("##clearHistory").addEventListener("click", () => {
   const items = historyList.querySelectorAll("li");
 
   items.forEach((item) => {
@@ -261,7 +261,7 @@ window.addEventListener("load", () => {
 
 ---
 
-## Danh sách lỗi đã sửa
+#### Danh sách lỗi đã sửa
 
 | Fix | Lỗi | Nguyên nhân | Cách sửa |
 |------|------|-------------|----------|
@@ -276,9 +276,9 @@ window.addEventListener("load", () => {
 
 ---
 
-# Câu C2 — Performance
+## Câu C2 — Performance
 
-## Tại sao bind event cho 1000 phần tử là Bad Practice?
+#### Tại sao bind event cho 1000 phần tử là Bad Practice?
 
 Khi gọi:
 
@@ -298,9 +298,9 @@ Nếu có 1000 phần tử:
 
 ---
 
-## Event Delegation giải quyết như thế nào?
+#### Event Delegation giải quyết như thế nào?
 
-### Nguyên lý Event Bubbling
+###### Nguyên lý Event Bubbling
 
 Khi click vào phần tử con:
 
@@ -349,9 +349,9 @@ historyList.addEventListener("click", (e) => {
 
 ---
 
-## Refactor bằng DocumentFragment
+#### Refactor bằng DocumentFragment
 
-### Code
+###### Code
 
 ```javascript
 const fragment = document.createDocumentFragment();
@@ -368,11 +368,11 @@ document.body.appendChild(fragment);
 
 ---
 
-## Vì sao nhanh hơn?
+#### Vì sao nhanh hơn?
 
 `DocumentFragment` là một DOM node tạm thời chỉ tồn tại trong bộ nhớ.
 
-### Cách làm thông thường
+###### Cách làm thông thường
 
 ```javascript
 for (...) {
@@ -390,7 +390,7 @@ Browser phải:
 
 ---
 
-### Khi dùng DocumentFragment
+###### Khi dùng DocumentFragment
 
 ```javascript
 for (...) {
@@ -415,15 +415,15 @@ Browser chỉ cần:
 
 ---
 
-## Kết luận
+#### Kết luận
 
-### Event Delegation
+###### Event Delegation
 
 ✅ Giảm số lượng Event Listener  
 ✅ Tiết kiệm bộ nhớ  
 ✅ Dễ quản lý danh sách động
 
-### DocumentFragment
+###### DocumentFragment
 
 ✅ Giảm số lần Reflow/Repaint  
 ✅ Tăng tốc độ render số lượng lớn phần tử  

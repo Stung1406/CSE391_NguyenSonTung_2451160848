@@ -1,24 +1,24 @@
 ````md
-# Câu A1 (5đ) — var / let / const
+## Câu A1 (5đ) — var / let / const
 
 Đọc chương 03. **Không chạy code**, dự đoán output cho từng đoạn:
 
 ---
 
-## Đoạn 1
+#### Đoạn 1
 
 ```javascript
 console.log(x);
 var x = 5;
 ````
 
-### Dự đoán output
+###### Dự đoán output
 
 ```javascript
 undefined
 ```
 
-### Giải thích
+###### Giải thích
 
 * `var` được **hoisting** (kéo lên đầu phạm vi).
 * Biến `x` được khai báo trước nhưng giá trị chưa được gán ngay.
@@ -33,20 +33,20 @@ x = 5;
 
 ---
 
-## Đoạn 2
+#### Đoạn 2
 
 ```javascript
 console.log(y);
 let y = 10;
 ```
 
-### Dự đoán output
+###### Dự đoán output
 
 ```javascript
 ReferenceError
 ```
 
-### Giải thích
+###### Giải thích
 
 * `let` cũng được hoisting nhưng nằm trong **Temporal Dead Zone (TDZ)**.
 * Không được truy cập biến trước khi khai báo.
@@ -59,7 +59,7 @@ ReferenceError: Cannot access 'y' before initialization
 
 ---
 
-## Đoạn 3
+#### Đoạn 3
 
 ```javascript
 const z = 15;
@@ -67,13 +67,13 @@ z = 20;
 console.log(z);
 ```
 
-### Dự đoán output
+###### Dự đoán output
 
 ```javascript
 TypeError
 ```
 
-### Giải thích
+###### Giải thích
 
 * `const` không cho phép gán lại giá trị sau khi khởi tạo.
 
@@ -85,7 +85,7 @@ TypeError: Assignment to constant variable.
 
 ---
 
-## Đoạn 4
+#### Đoạn 4
 
 ```javascript
 const arr = [1, 2, 3];
@@ -93,13 +93,13 @@ arr.push(4);
 console.log(arr);
 ```
 
-### Dự đoán output
+###### Dự đoán output
 
 ```javascript
 [1, 2, 3, 4]
 ```
 
-### Giải thích
+###### Giải thích
 
 * `const` không cho đổi sang mảng khác.
 * Nhưng vẫn được phép thay đổi nội dung bên trong mảng.
@@ -120,7 +120,7 @@ thì hợp lệ.
 
 ---
 
-## Đoạn 5
+#### Đoạn 5
 
 ```javascript
 let a = 1;
@@ -131,14 +131,14 @@ let a = 1;
 console.log("Ngoài block:", a);
 ```
 
-### Dự đoán output
+###### Dự đoán output
 
 ```javascript
 Trong block: 2
 Ngoài block: 1
 ```
 
-### Giải thích
+###### Giải thích
 
 * `let` có **block scope** (phạm vi khối).
 * Biến `a` bên trong `{}` là biến khác với `a` bên ngoài.
@@ -146,9 +146,9 @@ Ngoài block: 1
 ```
 ```
 
-## Câu A2 (5đ) — Data Types & Coercion
+#### Câu A2 (5đ) — Data Types & Coercion
 
-### Dự đoán kết quả:
+###### Dự đoán kết quả:
 
 ```javascript
 console.log(typeof null);              // → "object" (lỗi trong JS)
@@ -169,9 +169,9 @@ console.log({} + []);                  // → 0 hoặc "[object Object]"
 
 ---
 
-## Câu A3 (5đ) — So sánh == vs ===
+#### Câu A3 (5đ) — So sánh == vs ===
 
-### Dự đoán true/false:
+###### Dự đoán true/false:
 
 ```javascript
 console.log(5 == "5");                 // → true (loose equality, type coercion)
@@ -191,7 +191,7 @@ console.log("" == false);              // → true
 
 ---
 
-## Câu A4 (5đ) — Truthy & Falsy
+#### Câu A4 (5đ) — Truthy & Falsy
 
 **Các giá trị Falsy trong JavaScript:**
 - `false`
@@ -203,7 +203,7 @@ console.log("" == false);              // → true
 - `undefined`
 - `NaN`
 
-### Dự đoán kết quả:
+###### Dự đoán kết quả:
 
 ```javascript
 if ("0") console.log("A"); // → In "A" ("0" là truthy)
@@ -218,9 +218,9 @@ if (" ") console.log("H");              // → In "H" (space string truthy)
 
 ---
 
-## Câu A5 (5đ) — Template Literals
+#### Câu A5 (5đ) — Template Literals
 
-### Viết lại bằng template literals:
+###### Viết lại bằng template literals:
 
 ```javascript
 // Cách 1:
@@ -243,9 +243,9 @@ var html = `<div class="card">
 - Hỗ trợ interpolation
 
 
-## Câu C1 — Tìm và sửa lỗi trong code
+#### Câu C1 — Tìm và sửa lỗi trong code
 
-### Các lỗi tìm được:
+###### Các lỗi tìm được:
 
 | Lỗi | Vấn đề | Sửa |
 |-----|--------|-----|
@@ -256,7 +256,7 @@ var html = `<div class="card">
 | **5** | Thiếu semicolon | Dễ gây automatic semicolon insertion sai | Thêm `;` sau các statement |
 | **6** | Không validate kiểu input | Không check typeof | Thêm: `typeof giaBan !== 'number'` |
 
-### Code đã sửa:
+###### Code đã sửa:
 
 ```javascript
 function tinhGiaGiamGia(giaBan, phanTramGiam) {

@@ -1,6 +1,6 @@
-# Exercise 4.1 — React Components Setup
+## Exercise 4.1 — React Components Setup
 
-## 🎬 Opening Scenario
+#### 🎬 Opening Scenario
 
 *Chuyển Portfolio từ HTML/Bootstrap sang React với Vite. Mỗi section sẽ thành một component riêng biệt.*
 
@@ -10,9 +10,9 @@
 
 ---
 
-## 📋 Requirements
+#### 📋 Requirements
 
-### 1. Setup Vite Project
+###### 1. Setup Vite Project
 
 ```bash
 npm create vite@latest session_04_portfolio_react -- --template react
@@ -21,7 +21,7 @@ npm install
 npm run dev
 ```
 
-### 2. Project Structure
+###### 2. Project Structure
 
 ```
 src/
@@ -38,7 +38,7 @@ src/
 └── index.css
 ```
 
-### 3. Component Example — Header.jsx
+###### 3. Component Example — Header.jsx
 
 ```jsx
 // src/components/Header.jsx
@@ -47,12 +47,12 @@ function Header() {
         <header className="header">
             <div className="container">
                 <nav className="nav">
-                    <a href="#home" className="logo">YourName</a>
+                    <a href="##home" className="logo">YourName</a>
                     <div className="nav-links">
-                        <a href="#about">About</a>
-                        <a href="#skills">Skills</a>
-                        <a href="#portfolio">Portfolio</a>
-                        <a href="#contact">Contact</a>
+                        <a href="##about">About</a>
+                        <a href="##skills">Skills</a>
+                        <a href="##portfolio">Portfolio</a>
+                        <a href="##contact">Contact</a>
                     </div>
                 </nav>
             </div>
@@ -63,7 +63,7 @@ function Header() {
 export default Header;
 ```
 
-### 4. App.jsx — Compose All Components
+###### 4. App.jsx — Compose All Components
 
 ```jsx
 // src/App.jsx
@@ -94,7 +94,7 @@ function App() {
 export default App;
 ```
 
-### 5. Data for Skills (Static Props)
+###### 5. Data for Skills (Static Props)
 
 ```jsx
 // src/data/skills.js
@@ -127,9 +127,9 @@ export const projects = [
 
 ---
 
-## 🐛 Hints
+#### 🐛 Hints
 
-### CSS Module Setup
+###### CSS Module Setup
 ```css
 /* src/components/Header.module.css */
 .header {
@@ -140,7 +140,7 @@ export const projects = [
 }
 ```
 
-### Props Passing
+###### Props Passing
 ```jsx
 // Parent passes data as props
 <Skills skills={skillsData} />
@@ -153,23 +153,23 @@ function Skills({ skills }) {
 
 ---
 
-## 🪜 Step-by-Step Guide — Từng bước một
+#### 🪜 Step-by-Step Guide — Từng bước một
 
 > **Lần đầu dùng React?** Đừng lo về syntax mới. JSX chỉ là HTML viết trong JavaScript. Nếu bạn biết HTML + JS cơ bản, bạn đã biết 80% React.
 
-### Bước 1: Tạo Vite + React project (3 phút)
+###### Bước 1: Tạo Vite + React project (3 phút)
 
 ```bash
-# 1. Tạo project mới
+## 1. Tạo project mới
 npm create vite@latest my-portfolio-react -- --template react
 
-# 2. Vào thư mục
+## 2. Vào thư mục
 cd my-portfolio-react
 
-# 3. Cài dependencies
+## 3. Cài dependencies
 npm install
 
-# 4. Chạy dev server
+## 4. Chạy dev server
 npm run dev
 ```
 
@@ -179,14 +179,14 @@ npm run dev
 
 ---
 
-### Bước 2: Tạo component structure (10 phút)
+###### Bước 2: Tạo component structure (10 phút)
 
 1. Xóa nội dung mặc định trong `src/App.jsx`
 2. Tạo thư mục `src/components/`
 3. Tạo 7 file component:
 
 ```bash
-# Trong terminal (hoặc tạo tay trong VS Code)
+## Trong terminal (hoặc tạo tay trong VS Code)
 mkdir src/components
 touch src/components/Header.jsx
 touch src/components/Hero.jsx
@@ -199,7 +199,7 @@ touch src/components/Footer.jsx
 
 ---
 
-### Bước 3: Viết Header component (10 phút)
+###### Bước 3: Viết Header component (10 phút)
 
 ```jsx
 // src/components/Header.jsx
@@ -208,12 +208,12 @@ function Header() {
         <header className="header">
             <div className="container">
                 <nav className="nav">
-                    <a href="#home" className="logo">YourName</a>
+                    <a href="##home" className="logo">YourName</a>
                     <div className="nav-links">
-                        <a href="#about">About</a>
-                        <a href="#skills">Skills</a>
-                        <a href="#portfolio">Portfolio</a>
-                        <a href="#contact">Contact</a>
+                        <a href="##about">About</a>
+                        <a href="##skills">Skills</a>
+                        <a href="##portfolio">Portfolio</a>
+                        <a href="##contact">Contact</a>
                     </div>
                 </nav>
             </div>
@@ -228,7 +228,7 @@ export default Header;
 
 ---
 
-### Bước 4: Viết Hero component (10 phút)
+###### Bước 4: Viết Hero component (10 phút)
 
 ```jsx
 // src/components/Hero.jsx
@@ -242,7 +242,7 @@ function Hero() {
                 <p className="hero-subtitle">
                     Full-Stack Developer | UI Designer | Problem Solver
                 </p>
-                <a href="#portfolio" className="cta-button">
+                <a href="##portfolio" className="cta-button">
                     View My Work →
                 </a>
             </div>
@@ -257,7 +257,7 @@ export default Hero;
 
 ---
 
-### Bước 5: Compose trong App.jsx (5 phút)
+###### Bước 5: Compose trong App.jsx (5 phút)
 
 ```jsx
 // src/App.jsx
@@ -292,24 +292,24 @@ export default App;
 
 ---
 
-### Bước 6: Thêm CSS (10 phút)
+###### Bước 6: Thêm CSS (10 phút)
 
 Copy CSS từ Session 1-3 vào `src/index.css` hoặc tạo file riêng:
 
 ```css
 /* src/index.css */
 :root {
-    --color-primary: #6366f1;
-    --color-secondary: #8b5cf6;
-    --color-dark: #1e293b;
-    --color-light: #f8fafc;
+    --color-primary: ##6366f1;
+    --color-secondary: ##8b5cf6;
+    --color-dark: ##1e293b;
+    --color-light: ##f8fafc;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: 'Inter', sans-serif;
-    color: #334155;
+    color: ##334155;
 }
 
 .header { /* Copy CSS từ Session 1 */ }
@@ -320,7 +320,7 @@ body {
 
 ---
 
-## 🐛 Troubleshooting — Lỗi thường gặp
+#### 🐛 Troubleshooting — Lỗi thường gặp
 
 | Lỗi | Nguyên nhân | Cách sửa |
 |-----|-------------|----------|
@@ -333,7 +333,7 @@ body {
 
 ---
 
-## 🔍 DevTools Tips
+#### 🔍 DevTools Tips
 
 1. **Cài React DevTools:** Chrome Extensions → "React Developer Tools"
 2. **Xem component tree:** F12 → tab "Components" (React DevTools)
@@ -342,7 +342,7 @@ body {
 
 ---
 
-## ✅ Success Criteria
+#### ✅ Success Criteria
 
 - [ ] Vite project setup successfully
 - [ ] All 7 components created

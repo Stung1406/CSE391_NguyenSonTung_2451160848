@@ -1,10 +1,10 @@
-# PHIẾU BÀI TẬP 08 - Answers (Phần A + C)
+## PHIẾU BÀI TẬP 08 - Answers (Phần A + C)
 
-## PHẦN A — KIỂM TRA ĐỌC HIỂU (20 điểm)
+#### PHẦN A — KIỂM TRA ĐỌC HIỂU (20 điểm)
 
-### Câu A1 (5đ) — Function Declaration vs Expression vs Arrow
+###### Câu A1 (5đ) — Function Declaration vs Expression vs Arrow
 
-#### 1. Function Declaration
+######## 1. Function Declaration
 ```javascript
 function tinhThueBaoHiem(luong) {
     const thue = luong > 11000000 ? luong * 0.1 : 0;
@@ -15,7 +15,7 @@ function tinhThueBaoHiem(luong) {
 }
 ```
 
-#### 2. Function Expression
+######## 2. Function Expression
 ```javascript
 const tinhThueBaoHiem = function(luong) {
     const thue = luong > 11000000 ? luong * 0.1 : 0;
@@ -26,7 +26,7 @@ const tinhThueBaoHiem = function(luong) {
 };
 ```
 
-#### 3. Arrow Function
+######## 3. Arrow Function
 ```javascript
 const tinhThueBaoHiem = (luong) => {
     const thue = luong > 11000000 ? luong * 0.1 : 0;
@@ -43,9 +43,9 @@ const tinhThueBaoHiem = (luong) => {
 
 ---
 
-### Câu A2 (5đ) — Scope & Closure
+###### Câu A2 (5đ) — Scope & Closure
 
-#### Dự đoán Output:
+######## Dự đoán Output:
 ```
 Đoạn 1:
 1
@@ -69,7 +69,7 @@ let: 2
 
 ---
 
-### Câu A3 (5đ) — Array Methods
+###### Câu A3 (5đ) — Array Methods
 
 ```javascript
 const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -86,7 +86,7 @@ const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 ---
 
-### Câu A4 (5đ) — Object Destructuring & Spread
+###### Câu A4 (5đ) — Object Destructuring & Spread
 
 ```javascript
 // Destructuring output:
@@ -105,9 +105,9 @@ const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 ---
 
 
-## PHẦN C — SUY LUẬN (20 điểm)
+#### PHẦN C — SUY LUẬN (20 điểm)
 
-### Câu C1 (10đ) — Refactor Code
+###### Câu C1 (10đ) — Refactor Code
 
 ```javascript
 function processOrders(orders) {
@@ -124,7 +124,7 @@ function processOrders(orders) {
 
 ---
 
-### Câu C2 (10đ) — Thiết kế API - miniArray
+###### Câu C2 (10đ) — Thiết kế API - miniArray
 
 ```javascript
 const miniArray = {

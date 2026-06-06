@@ -1,6 +1,6 @@
-# PHẦN A — KIỂM TRA ĐỌC HIỂU
+## PHẦN A — KIỂM TRA ĐỌC HIỂU
 
-## Câu A1 — 5 Loại Positioning
+#### Câu A1 — 5 Loại Positioning
 
 | Position   | Vẫn chiếm chỗ trong flow? | Tham chiếu vị trí         | Cuộn theo trang? | Use case                  |
 |------------|---------------------------|---------------------------|------------------|---------------------------|
@@ -15,7 +15,7 @@
 - Tham chiếu parent khi parent có position khác static.
 - "Nearest positioned ancestor" là tổ tiên gần nhất có position khác static.
 
-## Câu A2 — Flexbox vs Grid
+#### Câu A2 — Flexbox vs Grid
 
 1. Trường hợp 1: 4 items nằm ngang, chia đều 4 cột.
 2. Trường hợp 2: 6 items, mỗi hàng 2 item, 3 hàng.
@@ -23,9 +23,9 @@
 4. Trường hợp 4: 3 items, cột trái 200px, giữa co giãn, phải 200px, có gap.
 5. Trường hợp 5: 7 items, 3 cột, 3 hàng (hàng cuối có 1 item).
 
-# PHẦN C — SUY LUẬN
+## PHẦN C — SUY LUẬN
 
-## **Câu C1 — Flexbox vs Grid: Khi nào dùng gì?**
+#### **Câu C1 — Flexbox vs Grid: Khi nào dùng gì?**
 
 **Navigation bar ngang (logo + menu + buttons)**
 **Dùng:** Flexbox  
@@ -47,7 +47,7 @@ Nếu 4 cột đều nhau: Flexbox với `flex: 1` đơn giản hơn. Nếu cầ
 **Dùng:** Flexbox  
 Card là layout 1 chiều theo trục dọc — `flex-direction: column`. Trick quan trọng: `margin-top: auto` trên nút "Mua" đẩy nút xuống đáy card bất kể nội dung text dài hay ngắn. Grid không có cách xử lý tự nhiên cho trick này.
 
-## **Câu C2 — Debug Flexbox**
+#### **Câu C2 — Debug Flexbox**
 
 **Lỗi 1: Cards không đều chiều cao — nút "Mua" bị nhảy lên/xuống**
 **Nguyên nhân:** card không có `display: flex; flex-direction: column` nên các phần tử bên trong xếp bình thường, nút không có cách để dính đáy.
@@ -96,5 +96,5 @@ Card là layout 1 chiều theo trục dọc — `flex-direction: column`. Trick 
 }
 ```
 
-# PHẦN D — VIDEO THỰC HÀNH OBS
+## PHẦN D — VIDEO THỰC HÀNH OBS
 Link video PBT_04:

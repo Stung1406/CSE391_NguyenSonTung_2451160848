@@ -88,7 +88,7 @@
 .form-group input,
 .form-group textarea {
     padding: 0.875rem 1rem;
-    border: 2px solid #e2e8f0;
+    border: 2px solid ##e2e8f0;
     border-radius: 8px;
     font-size: 1rem;
     font-family: inherit;
@@ -112,11 +112,11 @@
 }
 
 .form-group input:valid {
-    border-color: #10b981;
+    border-color: ##10b981;
 }
 
 .form-group input:invalid:not(:placeholder-shown) {
-    border-color: #ef4444;
+    border-color: ##ef4444;
 }
 
 .submit-btn {
@@ -134,7 +134,7 @@
 }
 
 .submit-btn:hover {
-    background-color: #4f46e5;
+    background-color: ##4f46e5;
     transform: translateY(-2px);
     box-shadow: 0 8px 16px rgba(99, 102, 241, 0.3);
 }

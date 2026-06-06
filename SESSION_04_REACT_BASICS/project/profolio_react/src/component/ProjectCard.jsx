@@ -20,7 +20,7 @@ function ProjectCard({ title, category, image, description, tags }) {
         <p className="card-text">{description}</p>
         <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
           {tags.map((tag) => (
-            <span key={tag} className="badge" style={{ background: "#f1f5f9", color: "#334155" }}>
+            <span key={tag} className="badge" style={{ background: "##f1f5f9", color: "##334155" }}>
               {tag}
             </span>
           ))}

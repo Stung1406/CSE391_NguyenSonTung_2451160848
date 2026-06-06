@@ -10,10 +10,10 @@ function Hero() {
             </h1>
             <p className="hero-subtitle">Full-Stack Developer | UI Designer | Problem Solver</p>
             <div className="hero-buttons">
-              <a href="#portfolio" className="btn btn-primary btn-lg">
+              <a href="##portfolio" className="btn btn-primary btn-lg">
                 View My Work
               </a>
-              <a href="#contact" className="btn btn-outline btn-lg">
+              <a href="##contact" className="btn btn-outline btn-lg">
                 Contact Me
               </a>
             </div>

@@ -3,29 +3,29 @@ function Header() {
     <header className="header">
       <div className="container">
         <nav className="navbar">
-          <a href="#home" className="navbar-brand">
+          <a href="##home" className="navbar-brand">
             <span>Your</span>
             <span className="brand-highlight">Name</span>
           </a>
           <div className="navbar-collapse">
             <ul className="navbar-nav">
               <li>
-                <a href="#about" className="nav-link">
+                <a href="##about" className="nav-link">
                   About
                 </a>
               </li>
               <li>
-                <a href="#skills" className="nav-link">
+                <a href="##skills" className="nav-link">
                   Skills
                 </a>
               </li>
               <li>
-                <a href="#portfolio" className="nav-link">
+                <a href="##portfolio" className="nav-link">
                   Portfolio
                 </a>
               </li>
               <li>
-                <a href="#contact" className="nav-link">
+                <a href="##contact" className="nav-link">
                   Contact
                 </a>
               </li>

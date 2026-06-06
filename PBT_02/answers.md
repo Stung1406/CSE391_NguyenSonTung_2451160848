@@ -1,6 +1,6 @@
-# Phần A — Kiểm tra đọc hiểu
+## Phần A — Kiểm tra đọc hiểu
 
-## Câu A1 — Input Types
+#### Câu A1 — Input Types
 
 1. `type="email"` → Ô nhập text, tự kiểm tra có @ → Dùng cho form đăng ký
 2. `type="password"` → Ô nhập text, ký tự bị ẩn thành ●, không tự validate → Dùng cho form đăng nhập
@@ -13,7 +13,7 @@
 9. `type="file"` → Nút chọn tệp, giới hạn định dạng bằng accept → Dùng cho upload ảnh đánh giá sản phẩm
 10. `type="search"` → Ô nhập text có icon 🔍 kèm nút xóa nhanh, không tự validate → Dùng cho thanh tìm kiếm sản phẩm
 
-## Câu A2 — Validation Attributes
+#### Câu A2 — Validation Attributes
 
 - TH1: Form không submit vì `required` bắt buộc phải có giá trị. `value=""` = rỗng → vi phạm, hiện tooltip "Vui lòng điền vào trường này"
 - TH2: Form không submit vì `type="email"` tự validate định dạng phải có `@` và domain. `"abc"` không có `@` → sai định dạng, hiện tooltip "Vui lòng nhập địa chỉ email"
@@ -21,7 +21,7 @@
 - TH4: Form không submit vì `pattern` yêu cầu đúng 10 chữ số liên tiếp. `"abc123"` có chữ cái và chỉ 6 ký tự → không khớp regex, hiện tooltip "Vui lòng khớp định dạng yêu cầu"
 - TH5: Form không submit vì `minlength="8"` yêu cầu độ dài tối thiểu 8 ký tự. `"123"` chỉ có 3 ký tự → vi phạm, hiện tooltip "Phải có từ 8 ký tự trở lên"
 
-## Câu A3 — Accessibility
+#### Câu A3 — Accessibility
 
 1. Tại sao `<label for="email">` quan trọng cho screen reader?
 
@@ -53,7 +53,7 @@
 - Không nên dùng `aria-label` khi đã có `<label>` vì 2 cái sẽ xung đột, `aria-label` sẽ ghi đè `<label>` khiến screen reader bỏ qua label thật.
 - `<label>` vừa hỗ trợ screen reader, vừa hiển thị được trên trang, vừa cho phép click vào chữ để focus input → tốt hơn `aria-label` toàn diện hơn.
 
-## Câu A4 — Media
+#### Câu A4 — Media
 
 1. Thuộc tính `loading="lazy"` trên `<img>`
 
@@ -61,7 +61,7 @@
 - `loading="lazy"` yêu cầu trình duyệt chỉ tải ảnh khi user cuộn gần đến vị trí ảnh đó → tiết kiệm băng thông, trang load nhanh hơn ở lần đầu.
 - Cải thiện: giảm thời gian tải trang ban đầu, tiết kiệm data cho user mobile, giảm tải server.
 
-### Không nên dùng khi:
+###### Không nên dùng khi:
 
 - Ảnh nằm ở vùng nhìn thấy ngay khi mở trang (above the fold) ví dụ logo, banner hero → lazy sẽ làm ảnh xuất hiện chậm, gây layout shift.
 - Ảnh quan trọng cần hiển thị ngay như ảnh sản phẩm đầu tiên trong trang chi tiết.
@@ -72,7 +72,7 @@
 - Trình duyệt đọc từng `<source>` từ trên xuống, gặp format nào hỗ trợ được thì dùng luôn, bỏ qua các source còn lại.
 - Nếu chỉ cung cấp 1 format, user dùng trình duyệt không hỗ trợ format đó sẽ không xem được video.
 
-### 3 format video web phổ biến:
+###### 3 format video web phổ biến:
 
 - `video/mp4` — hỗ trợ rộng nhất, chạy được trên hầu hết trình duyệt và thiết bị.
 - `video/webm` — nhẹ hơn mp4, chất lượng tốt, hỗ trợ tốt trên Chrome và Firefox.
@@ -87,7 +87,7 @@
 - Ảnh trang trí (decorative) → `alt=""` — để rỗng, screen reader sẽ bỏ qua, tránh đọc những thứ không có nghĩa.
 - Ảnh biểu đồ doanh thu Q1/2026 → `alt="Biểu đồ cột doanh thu Q1/2026, tháng 3 đạt cao nhất với 4.2 tỷ đồng"`
 
-## Câu A5 — So sánh `<figure>` vs `<img>`
+#### Câu A5 — So sánh `<figure>` vs `<img>`
 
 Cách 1 — `<img>`
 
@@ -103,9 +103,9 @@ Cách 2 — `<figure>` + `<figcaption>`
   Ví dụ thực tế:
 - Trang chi tiết sản phẩm → ảnh sản phẩm kèm tên, giá, màu sắc bên dưới.
 
-# Phần C: Phân tích và suy luận
+## Phần C: Phân tích và suy luận
 
-## Câu C1 — Debug Form
+#### Câu C1 — Debug Form
 
 1. Lỗi 1: Dòng 2 — Input "Tên" không có `<label for="...">`, vi phạm accessibility
 
@@ -170,10 +170,10 @@ Cách 2 — `<figure>` + `<figcaption>`
 
 ```html
 <!-- Sửa -->
-<form action="#" method="POST"></form>
+<form action="##" method="POST"></form>
 ```
 
-## Câu C2 — Thiết kế chiến lược Validation
+#### Câu C2 — Thiết kế chiến lược Validation
 
 1. Pattern regex cho CMND/CCCD và Số tài khoản
 

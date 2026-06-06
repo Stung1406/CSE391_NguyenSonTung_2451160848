@@ -1,6 +1,6 @@
-# Exercise 4.4 — Contact Form với useState
+## Exercise 4.4 — Contact Form với useState
 
-## 🎬 Opening Scenario
+#### 🎬 Opening Scenario
 
 *Xây dựng contact form với React state. Form sẽ có validation và submit handling.*
 
@@ -10,9 +10,9 @@
 
 ---
 
-## 📋 Requirements
+#### 📋 Requirements
 
-### 1. Contact Component với Form State
+###### 1. Contact Component với Form State
 
 ```jsx
 // src/components/Contact.jsx
@@ -152,18 +152,18 @@ export default Contact;
 
 ---
 
-## 🎨 Error Styling
+#### 🎨 Error Styling
 
 ```css
 /* Error input styling */
 input.error,
 textarea.error {
-    border-color: #ef4444;
-    background-color: #fef2f2;
+    border-color: ##ef4444;
+    background-color: ##fef2f2;
 }
 
 span.error {
-    color: #ef4444;
+    color: ##ef4444;
     font-size: 0.875rem;
     margin-top: 0.25rem;
     display: block;
@@ -172,15 +172,15 @@ span.error {
 /* Success input */
 input.valid,
 textarea.valid {
-    border-color: #22c55e;
+    border-color: ##22c55e;
 }
 ```
 
 ---
 
-## 🐛 Hints
+#### 🐛 Hints
 
-### Controlled Input
+###### Controlled Input
 ```jsx
 // value + onChange = controlled input
 <input
@@ -189,13 +189,13 @@ textarea.valid {
 />
 ```
 
-### Form Reset
+###### Form Reset
 ```jsx
 // Spread to reset all fields
 setFormData({ name: '', email: '', message: '' });
 ```
 
-### Prevent Default
+###### Prevent Default
 ```jsx
 // Must call preventDefault on form submit
 const handleSubmit = (e) => {
@@ -206,7 +206,7 @@ const handleSubmit = (e) => {
 
 ---
 
-## ✅ Success Criteria
+#### ✅ Success Criteria
 
 - [ ] Form state managed with useState
 - [ ] handleChange updates all fields

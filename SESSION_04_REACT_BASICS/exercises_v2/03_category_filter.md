@@ -1,6 +1,6 @@
-# Exercise 4.3 — Category Filter + Events
+## Exercise 4.3 — Category Filter + Events
 
-## 🎬 Opening Scenario
+#### 🎬 Opening Scenario
 
 *Thêm filter functionality cho portfolio. User click filter button → hiện items thuộc category đó.*
 
@@ -10,9 +10,9 @@
 
 ---
 
-## 📋 Requirements
+#### 📋 Requirements
 
-### 1. Add Filter State
+###### 1. Add Filter State
 
 ```jsx
 // src/components/Portfolio.jsx
@@ -66,7 +66,7 @@ function Portfolio() {
 export default Portfolio;
 ```
 
-### 2. Active Button Styling
+###### 2. Active Button Styling
 
 ```jsx
 // In filter button
@@ -96,9 +96,9 @@ className={`filter-btn ${filter === category ? 'active' : ''}`}
 
 ---
 
-## 🐛 Hints
+#### 🐛 Hints
 
-### Key Prop Warning
+###### Key Prop Warning
 ```jsx
 // Always use unique key from data
 {items.map(project => (
@@ -106,7 +106,7 @@ className={`filter-btn ${filter === category ? 'active' : ''}`}
 ))}
 ```
 
-### Filter Logic
+###### Filter Logic
 ```javascript
 // Wrong: mutates original
 const filtered = items.filter(item => item.category === filter)
@@ -115,7 +115,7 @@ const filtered = items.filter(item => item.category === filter)
 items.filter(item => item.category === filter)
 ```
 
-### Event Handler
+###### Event Handler
 ```jsx
 // Arrow function in onClick
 <button onClick={() => setFilter(category)}>
@@ -126,7 +126,7 @@ items.filter(item => item.category === filter)
 
 ---
 
-## ✅ Success Criteria
+#### ✅ Success Criteria
 
 - [ ] Filter state initialized as 'all'
 - [ ] 4 filter buttons rendered

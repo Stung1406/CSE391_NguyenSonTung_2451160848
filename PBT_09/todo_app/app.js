@@ -1,12 +1,12 @@
 let todos = JSON.parse(localStorage.getItem("todos")) || [];
 let currentFilter = "all";
 
-const todoInput = document.querySelector("#todoInput");
-const addBtn = document.querySelector("#addBtn");
-const todoList = document.querySelector("#todoList");
-const itemCount = document.querySelector("#itemCount");
-const footer = document.querySelector("#footer");
-const clearCompleted = document.querySelector("#clearCompleted");
+const todoInput = document.querySelector("##todoInput");
+const addBtn = document.querySelector("##addBtn");
+const todoList = document.querySelector("##todoList");
+const itemCount = document.querySelector("##itemCount");
+const footer = document.querySelector("##footer");
+const clearCompleted = document.querySelector("##clearCompleted");
 const filterBtns = document.querySelectorAll(".filter-btn");
 
 function save() {

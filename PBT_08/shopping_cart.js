@@ -58,7 +58,7 @@ function createCart() {
       const padL = (str, len) => String(str).padStart(len);
 
       console.log(top);
-      console.log(`│ ${"#"} │ ${pad("Sản phẩm", 16)} │ ${padL("SL", 2)} │ ${padL("Đơn giá", 12)} │ ${padL("Tổng", 12)} │`);
+      console.log(`│ ${"##"} │ ${pad("Sản phẩm", 16)} │ ${padL("SL", 2)} │ ${padL("Đơn giá", 12)} │ ${padL("Tổng", 12)} │`);
       console.log(mid);
 
       items.forEach((item, index) => {

@@ -1,6 +1,6 @@
-# Exercise 0.5 — JSX: Viết giao diện Portfolio
+## Exercise 0.5 — JSX: Viết giao diện Portfolio
 
-## 🎬 Bối cảnh
+#### 🎬 Bối cảnh
 
 *Minh đã thấy "nỗi đau" khi dùng DOM thuần (Bài 0.0). Giờ bạn ấy muốn viết giao diện Portfolio bằng JSX — cú pháp mà React sử dụng. JSX trông giống HTML nhưng mạnh hơn rất nhiều: chèn được JavaScript, render danh sách, hiển thị có điều kiện.*
 
@@ -8,9 +8,9 @@
 
 ---
 
-## 📋 Yêu cầu
+#### 📋 Yêu cầu
 
-### Phần A — Portfolio Hero + SkillBadge (10 phút)
+###### Phần A — Portfolio Hero + SkillBadge (10 phút)
 
 Tạo file `portfolio_hero.html` — **không cần cài đặt, dùng CDN**:
 
@@ -25,11 +25,11 @@ Tạo file `portfolio_hero.html` — **không cần cài đặt, dùng CDN**:
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <style>
         body { font-family: Arial, sans-serif; max-width: 700px; margin: 2rem auto; }
-        .hero { background: linear-gradient(135deg, #3498db, #2c3e50); color: white;
+        .hero { background: linear-gradient(135deg, ##3498db, ##2c3e50); color: white;
                 text-align: center; padding: 3rem 2rem; border-radius: 12px; margin-bottom: 2rem; }
         .hero h1 { font-size: 2rem; margin-bottom: 0.3rem; }
         .hero p { opacity: 0.85; margin-bottom: 1rem; }
-        .hero button { padding: 10px 24px; background: #e74c3c; color: white;
+        .hero button { padding: 10px 24px; background: ##e74c3c; color: white;
                        border: none; border-radius: 25px; cursor: pointer; }
         .skills { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; }
         .skill-badge { padding: 6px 14px; border-radius: 20px; font-size: 14px;
@@ -42,11 +42,11 @@ Tạo file `portfolio_hero.html` — **không cần cài đặt, dùng CDN**:
 
     <script type="text/babel">
         const skills = [
-            { name: 'HTML5', level: 95, color: '#e34c26' },
-            { name: 'CSS3', level: 90, color: '#264de4' },
-            { name: 'JavaScript', level: 85, color: '#f0db4f' },
-            { name: 'React', level: 70, color: '#61dafb' },
-            { name: 'Node.js', level: 60, color: '#68a063' },
+            { name: 'HTML5', level: 95, color: '##e34c26' },
+            { name: 'CSS3', level: 90, color: '##264de4' },
+            { name: 'JavaScript', level: 85, color: '##f0db4f' },
+            { name: 'React', level: 70, color: '##61dafb' },
+            { name: 'Node.js', level: 60, color: '##68a063' },
         ];
 
         // ============================================
@@ -100,7 +100,7 @@ Tạo file `portfolio_hero.html` — **không cần cài đặt, dùng CDN**:
 
 ---
 
-### Phần B — ProjectCard + Conditional Rendering (15 phút)
+###### Phần B — ProjectCard + Conditional Rendering (15 phút)
 
 Tạo file `portfolio_projects.html` — **component sẽ dùng lại trong Bài 0.1**:
 
@@ -116,7 +116,7 @@ Tạo file `portfolio_projects.html` — **component sẽ dùng lại trong Bài
     <style>
         body { font-family: Arial, sans-serif; max-width: 800px; margin: 2rem auto; }
         .project-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.2rem; margin-top: 1rem; }
-        .project-card { border: 1px solid #ddd; border-radius: 10px; overflow: hidden;
+        .project-card { border: 1px solid ##ddd; border-radius: 10px; overflow: hidden;
                         transition: transform 0.3s; background: white; }
         .project-card:hover { transform: translateY(-4px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
         .project-card img { width: 100%; height: 150px; object-fit: cover; }
@@ -124,18 +124,18 @@ Tạo file `portfolio_projects.html` — **component sẽ dùng lại trong Bài
         .project-card h3 { font-size: 1rem; margin-bottom: 0.2rem; }
         .project-card .category { font-size: 12px; padding: 2px 8px; border-radius: 10px;
                                    color: white; display: inline-block; margin-bottom: 0.4rem; }
-        .cat-web { background: #3498db; }
-        .cat-mobile { background: #27ae60; }
-        .cat-design { background: #9b59b6; }
-        .project-card .desc { font-size: 13px; color: #666; }
+        .cat-web { background: ##3498db; }
+        .cat-mobile { background: ##27ae60; }
+        .cat-design { background: ##9b59b6; }
+        .project-card .desc { font-size: 13px; color: ##666; }
         .project-card .tags { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 0.5rem; }
-        .project-card .tag { font-size: 11px; background: #f0f0f0; padding: 2px 8px; border-radius: 10px; }
-        .project-card .featured { position: absolute; top: 8px; right: 8px; background: #e74c3c;
+        .project-card .tag { font-size: 11px; background: ##f0f0f0; padding: 2px 8px; border-radius: 10px; }
+        .project-card .featured { position: absolute; top: 8px; right: 8px; background: ##e74c3c;
                                    color: white; font-size: 11px; padding: 2px 8px; border-radius: 10px; }
         .project-card { position: relative; }
-        .empty-state { text-align: center; padding: 3rem; color: #999; }
+        .empty-state { text-align: center; padding: 3rem; color: ##999; }
         .stats { display: flex; gap: 1rem; margin-top: 1.5rem; justify-content: center; }
-        .stats span { padding: 8px 16px; background: #ecf0f1; border-radius: 8px; font-size: 14px; }
+        .stats span { padding: 8px 16px; background: ##ecf0f1; border-radius: 8px; font-size: 14px; }
     </style>
 </head>
 <body>
@@ -210,13 +210,13 @@ Tạo file `portfolio_projects.html` — **component sẽ dùng lại trong Bài
 </html>
 ```
 
-### 🎯 Hoàn thành tất cả TODO trong cả 2 file
+###### 🎯 Hoàn thành tất cả TODO trong cả 2 file
 
 ---
 
-## 💡 Ghi chú quan trọng về JSX
+#### 💡 Ghi chú quan trọng về JSX
 
-### 1. JSX không phải HTML
+###### 1. JSX không phải HTML
 
 | HTML thuần | JSX |
 |------------|-----|
@@ -225,7 +225,7 @@ Tạo file `portfolio_projects.html` — **component sẽ dùng lại trong Bài
 | `onclick="fn()"` | `onClick={fn}` |
 | `<!-- comment -->` | `{/* comment */}` |
 
-### 2. Chèn JavaScript trong JSX
+###### 2. Chèn JavaScript trong JSX
 
 ```jsx
 // ✅ Dùng {} để chèn expression
@@ -237,7 +237,7 @@ Tạo file `portfolio_projects.html` — **component sẽ dùng lại trong Bài
 <div>{if (isLoggedIn) { return 'Hi' }}</div>
 ```
 
-### 3. Conditional Rendering
+###### 3. Conditional Rendering
 
 ```jsx
 // Cách 1: Ternary (phổ biến nhất)
@@ -251,7 +251,7 @@ if (!user) return <Login />;
 return <Dashboard />;
 ```
 
-### 4. List Rendering
+###### 4. List Rendering
 
 ```jsx
 // Luôn phải có key prop!
@@ -262,15 +262,15 @@ return <Dashboard />;
 
 ---
 
-## ✅ Tiêu chí đạt bài
+#### ✅ Tiêu chí đạt bài
 
-### Phần A (`portfolio_hero.html`)
+###### Phần A (`portfolio_hero.html`)
 - [ ] `PortfolioHero` hiển thị name, title, buttonText từ props
 - [ ] `SkillBadge` hiển thị tên + level + màu từ props
 - [ ] `SkillsSection` dùng `.map()` render danh sách SkillBadge
 - [ ] `App` compose PortfolioHero + SkillsSection
 
-### Phần B (`portfolio_projects.html`)
+###### Phần B (`portfolio_projects.html`)
 - [ ] `CategoryBadge` hiển thị màu theo category (conditional rendering)
 - [ ] `ProjectCard` hiển thị đầy đủ: image, badge, title, desc, tags
 - [ ] Featured badge chỉ hiện khi `featured === true`
@@ -279,7 +279,7 @@ return <Dashboard />;
 
 ---
 
-## 🔑 Gợi ý
+#### 🔑 Gợi ý
 
 <details>
 <summary>Click để xem gợi ý CategoryBadge</summary>
@@ -319,7 +319,7 @@ function ProjectCard({ title, category, image, description, tags, featured }) {
 
 ---
 
-## 📝 Ghi chú cho giảng viên
+#### 📝 Ghi chú cho giảng viên
 
 > **Bài này dạy 3 kỹ năng JSX cốt lõi:** Props passing (Phần A), Conditional rendering (featured badge), List rendering (.map()). Cả 3 sẽ xuất hiện liên tục trong các bài sau.
 >

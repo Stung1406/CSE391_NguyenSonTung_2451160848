@@ -1,14 +1,14 @@
-# Exercise 1.4 — Contact Form + Footer
+## Exercise 1.4 — Contact Form + Footer
 
-## 🎬 Opening Scenario
+#### 🎬 Opening Scenario
 
 *Task cuối của Session 1: xây dựng contact form với validation UI feedback và responsive footer với social links.*
 
 ---
 
-## 📋 Requirements
+#### 📋 Requirements
 
-### 1. Contact Section
+###### 1. Contact Section
 
 ```html
 <section id="contact" class="contact-section">
@@ -53,7 +53,7 @@
 - Labels always visible (không placeholder only)
 - Submit button với hover effect
 
-### 2. Footer
+###### 2. Footer
 
 ```html
 <footer class="footer">
@@ -62,13 +62,13 @@
             <div class="footer-logo">YourName</div>
             <p class="footer-tagline">Building digital experiences</p>
             <div class="social-links">
-                <a href="#" class="social-link" aria-label="GitHub">
+                <a href="##" class="social-link" aria-label="GitHub">
                     <svg><!-- GitHub icon --></svg>
                 </a>
-                <a href="#" class="social-link" aria-label="LinkedIn">
+                <a href="##" class="social-link" aria-label="LinkedIn">
                     <svg><!-- LinkedIn icon --></svg>
                 </a>
-                <a href="#" class="social-link" aria-label="Email">
+                <a href="##" class="social-link" aria-label="Email">
                     <svg><!-- Email icon --></svg>
                 </a>
             </div>
@@ -88,9 +88,9 @@
 
 ---
 
-## 🎨 Design Specs
+#### 🎨 Design Specs
 
-### Form Styling
+###### Form Styling
 ```css
 .form-group {
     margin-bottom: 1.5rem;
@@ -106,7 +106,7 @@
 .form-group textarea {
     width: 100%;
     padding: 0.875rem 1rem;
-    border: 2px solid #e2e8f0;
+    border: 2px solid ##e2e8f0;
     border-radius: 8px;
     font-size: 1rem;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -120,7 +120,7 @@
 }
 ```
 
-### Footer Colors
+###### Footer Colors
 ```css
 .footer {
     background: var(--color-dark);
@@ -147,9 +147,9 @@
 
 ---
 
-## 🐛 Hints
+#### 🐛 Hints
 
-### Input Focus Animation
+###### Input Focus Animation
 ```css
 input:focus {
     border-color: var(--color-primary);
@@ -157,7 +157,7 @@ input:focus {
 }
 ```
 
-### Textarea Resize
+###### Textarea Resize
 ```css
 textarea {
     resize: vertical;
@@ -165,7 +165,7 @@ textarea {
 }
 ```
 
-### Footer Grid
+###### Footer Grid
 ```css
 .footer-content {
     display: grid;
@@ -179,7 +179,7 @@ textarea {
 }
 ```
 
-### SVG Icons (inline)
+###### SVG Icons (inline)
 ```html
 <!-- GitHub -->
 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -189,7 +189,7 @@ textarea {
 
 ---
 
-## ✅ Success Criteria
+#### ✅ Success Criteria
 
 - [ ] Contact form responsive (2 col → 1 col)
 - [ ] Form inputs có focus effect
@@ -200,7 +200,7 @@ textarea {
 
 ---
 
-## 📝 Commit Messages Expected
+#### 📝 Commit Messages Expected
 
 ```
 [FEATURE] Style contact form inputs

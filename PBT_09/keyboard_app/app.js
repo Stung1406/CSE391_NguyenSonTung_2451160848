@@ -50,19 +50,19 @@ let filteredCmds = [...commands];
 
 // ─── DOM refs ─────────────────────────────────────────────────────────────────
 
-const gallery = document.querySelector("#gallery");
-const modalOverlay = document.querySelector("#modalOverlay");
-const modalImg = document.querySelector("#modalImg");
-const modalCaption = document.querySelector("#modalCaption");
-const modalCounter = document.querySelector("#modalCounter");
-const modalClose = document.querySelector("#modalClose");
-const prevBtn = document.querySelector("#prevBtn");
-const nextBtn = document.querySelector("#nextBtn");
-const slideshowStatus = document.querySelector("#slideshowStatus");
-const cmdOverlay = document.querySelector("#cmdOverlay");
-const cmdInput = document.querySelector("#cmdInput");
-const cmdList = document.querySelector("#cmdList");
-const openCmdBtn = document.querySelector("#openCmdBtn");
+const gallery = document.querySelector("##gallery");
+const modalOverlay = document.querySelector("##modalOverlay");
+const modalImg = document.querySelector("##modalImg");
+const modalCaption = document.querySelector("##modalCaption");
+const modalCounter = document.querySelector("##modalCounter");
+const modalClose = document.querySelector("##modalClose");
+const prevBtn = document.querySelector("##prevBtn");
+const nextBtn = document.querySelector("##nextBtn");
+const slideshowStatus = document.querySelector("##slideshowStatus");
+const cmdOverlay = document.querySelector("##cmdOverlay");
+const cmdInput = document.querySelector("##cmdInput");
+const cmdList = document.querySelector("##cmdList");
+const openCmdBtn = document.querySelector("##openCmdBtn");
 
 // ─── Gallery render ───────────────────────────────────────────────────────────
 

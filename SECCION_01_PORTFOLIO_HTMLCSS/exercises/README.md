@@ -1,6 +1,6 @@
-# Session 1 — HTML/CSS Fundamentals
+## Session 1 — HTML/CSS Fundamentals
 
-## 🎯 Mục tiêu
+#### 🎯 Mục tiêu
 
 - Nắm vững HTML5 semantic elements
 - Sử dụng CSS Grid và Flexbox cho layout
@@ -9,7 +9,7 @@
 
 ---
 
-## 📁 Cấu trúc thư mục
+#### 📁 Cấu trúc thư mục
 
 ```
 session_01_html_css/
@@ -39,9 +39,9 @@ session_01_html_css/
 
 ---
 
-## 🔧 Hướng dẫn Git Commit Convention
+#### 🔧 Hướng dẫn Git Commit Convention
 
-### Quy tắc đặt tên commit
+###### Quy tắc đặt tên commit
 
 ```
 [TYPE] Mô tả ngắn gọn
@@ -51,7 +51,7 @@ session_01_html_css/
 - Không dùng dấu chấm ở cuối
 ```
 
-### Các loại commit TYPE
+###### Các loại commit TYPE
 
 | TYPE | Ý nghĩa | Khi nào dùng |
 |------|---------|--------------|
@@ -64,24 +64,24 @@ session_01_html_css/
 | `[STATE]` | JavaScript state | Xử lý state, events |
 | `[VALIDATION]` | Validation | Form validation |
 
-### Ví dụ commit messages
+###### Ví dụ commit messages
 
 ```bash
-# ✅ Đúng
+## ✅ Đúng
 git commit -m "[SETUP] Initialize project structure"
 git commit -m "[FEATURE] Add sticky header navigation"
 git commit -m "[STYLE] Create CSS variables and reset"
 git commit -m "[UI] Implement hero section hover effects"
 git commit -m "[BUGFIX] Fix mobile menu toggle"
 
-# ❌ Sai
-git commit -m "init project"                    # thiếu TYPE
-git commit -m "[FEATURE] Added the header"      # quá dài
-git commit -m "fix bug"                        # thiếu TYPE và mô tả
-git commit -m "[FEATURE] Did some stuff"       # không rõ ràng
+## ❌ Sai
+git commit -m "init project"                    ## thiếu TYPE
+git commit -m "[FEATURE] Added the header"      ## quá dài
+git commit -m "fix bug"                        ## thiếu TYPE và mô tả
+git commit -m "[FEATURE] Did some stuff"       ## không rõ ràng
 ```
 
-### Số lượng commit tối thiểu
+###### Số lượng commit tối thiểu
 
 | Bài tập | Số commit tối thiểu |
 |---------|-------------------|
@@ -91,25 +91,25 @@ git commit -m "[FEATURE] Did some stuff"       # không rõ ràng
 | Bài 1.4 (Contact + Footer) | 3 commits |
 | **Tổng cộng** | **12 commits** |
 
-### Workflow commit cho mỗi bài
+###### Workflow commit cho mỗi bài
 
 ```bash
-# Bài 1.1 - Header + Hero (3 commits)
+## Bài 1.1 - Header + Hero (3 commits)
 git commit -m "[SETUP] Create session folders"
 git commit -m "[FEATURE] Build header navigation"
 git commit -m "[FEATURE] Complete hero section with CTA"
 
-# Bài 1.2 - About + Skills (3 commits)
+## Bài 1.2 - About + Skills (3 commits)
 git commit -m "[STYLE] Create about section layout"
 git commit -m "[FEATURE] Add skills progress bars"
 git commit -m "[REFACTOR] Optimize responsive breakpoints"
 
-# Bài 1.3 - Portfolio (3 commits)
+## Bài 1.3 - Portfolio (3 commits)
 git commit -m "[FEATURE] Build portfolio grid layout"
 git commit -m "[UI] Add hover zoom effects"
 git commit -m "[FEATURE] Implement CSS-only lightbox"
 
-# Bài 1.4 - Contact + Footer (3 commits)
+## Bài 1.4 - Contact + Footer (3 commits)
 git commit -m "[FEATURE] Style contact form inputs"
 git commit -m "[FEATURE] Add responsive footer"
 git commit -m "[REFACTOR] Final responsive adjustments"
@@ -117,9 +117,9 @@ git commit -m "[REFACTOR] Final responsive adjustments"
 
 ---
 
-## 📝 Bài tập (4 bài)
+#### 📝 Bài tập (4 bài)
 
-### Bài 1.1 — Header + Hero Section (45 phút)
+###### Bài 1.1 — Header + Hero Section (45 phút)
 
 **Mục tiêu:** Xây dựng header navigation và hero section với CTA button
 
@@ -161,7 +161,7 @@ git commit -m "[REFACTOR] Final responsive adjustments"
 
 ---
 
-### Bài 1.2 — About + Skills Section (45 phút)
+###### Bài 1.2 — About + Skills Section (45 phút)
 
 **Mục tiêu:** Xây dựng phần about và skills với progress bars
 
@@ -185,7 +185,7 @@ git commit -m "[REFACTOR] Final responsive adjustments"
 
 ---
 
-### Bài 1.3 — Portfolio Grid Gallery (45 phút)
+###### Bài 1.3 — Portfolio Grid Gallery (45 phút)
 
 **Mục tiêu:** Xây dựng gallery grid với hover effects
 
@@ -210,7 +210,7 @@ git commit -m "[REFACTOR] Final responsive adjustments"
 
 ---
 
-### Bài 1.4 — Contact Form + Footer (45 phút)
+###### Bài 1.4 — Contact Form + Footer (45 phút)
 
 **Mục tiêu:** Xây dựng contact form và responsive footer
 
@@ -235,7 +235,7 @@ git commit -m "[REFACTOR] Final responsive adjustments"
 
 ---
 
-## 📊 Rubric đánh giá
+#### 📊 Rubric đánh giá
 
 | Tiêu chí | Điểm | Mô tả |
 |----------|------|-------|
@@ -246,9 +246,9 @@ git commit -m "[REFACTOR] Final responsive adjustments"
 
 ---
 
-## 🐛 Troubleshooting thường gặp
+#### 🐛 Troubleshooting thường gặp
 
-### 1. CSS Grid không responsive
+###### 1. CSS Grid không responsive
 ```css
 /* Sai */
 .grid { display: grid; grid-template-columns: 300px 300px; }
@@ -257,13 +257,13 @@ git commit -m "[REFACTOR] Final responsive adjustments"
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
 ```
 
-### 2. Header sticky không hoạt động
+###### 2. Header sticky không hoạt động
 ```css
 /* Phải có top: 0 */
 header { position: sticky; top: 0; z-index: 100; }
 ```
 
-### 3. Form inputs trên mobile quá nhỏ
+###### 3. Form inputs trên mobile quá nhỏ
 ```css
 /* Đặt min-height và font-size */
 input, textarea { min-height: 44px; font-size: 16px; }
@@ -271,7 +271,7 @@ input, textarea { min-height: 44px; font-size: 16px; }
 
 ---
 
-## ✅ Checklist trước khi nộp
+#### ✅ Checklist trước khi nộp
 
 - [ ] Header sticky trên mọi breakpoint
 - [ ] Hero section full viewport height
@@ -284,7 +284,7 @@ input, textarea { min-height: 44px; font-size: 16px; }
 
 ---
 
-## 📚 Tài liệu tham khảo
+#### 📚 Tài liệu tham khảo
 
 - [MDN: CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout)
 - [CSS-Tricks: Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
@@ -292,7 +292,7 @@ input, textarea { min-height: 44px; font-size: 16px; }
 
 ---
 
-## ▶️ Bắt đầu
+#### ▶️ Bắt đầu
 
 1. Fork repository `session_01_portfolio_htmlcss`
 2. Clone về máy local

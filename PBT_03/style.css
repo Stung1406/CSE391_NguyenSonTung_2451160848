@@ -2,15 +2,15 @@
 
 body {
     font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: #f4f7fb;
-    color: #222;
+    background-color: ##f4f7fb;
+    color: ##222;
     line-height: 1.6;
     margin: 0;
 }
 
-header#main-header {
-    background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
-    color: #ffffff;
+header##main-header {
+    background: linear-gradient(135deg, ##4b6cb7 0%, ##182848 100%);
+    color: ##ffffff;
     padding: 24px 20px;
 }
 
@@ -23,19 +23,19 @@ header nav ul {
 }
 
 header nav ul li a {
-    color: #d9e8ff;
+    color: ##d9e8ff;
     text-decoration: none;
     padding: 10px 14px;
     border-radius: 6px;
 }
 
 header nav ul li a:hover {
-    color: #ffffff;
+    color: ##ffffff;
     text-decoration: underline;
 }
 
 header nav ul li a.active {
-    color: #fff7a8;
+    color: ##fff7a8;
     font-weight: 700;
     text-decoration: underline;
     background-color: rgba(255, 255, 255, 0.08);
@@ -59,29 +59,29 @@ section.skills table {
     margin-top: 12px;
 }
 
-#skills-table th,
-#skills-table td {
+##skills-table th,
+##skills-table td {
     padding: 12px 14px;
-    border: 1px solid #d7dee9;
+    border: 1px solid ##d7dee9;
 }
 
-#skills-table thead th {
-    background: #23325e;
-    color: #ffffff;
+##skills-table thead th {
+    background: ##23325e;
+    color: ##ffffff;
     text-align: left;
 }
 
-#skills-table tbody tr:nth-child(even) {
-    background: #eef4ff;
+##skills-table tbody tr:nth-child(even) {
+    background: ##eef4ff;
 }
 
-#skills-table tbody tr:hover {
-    background: #c8d8ff;
+##skills-table tbody tr:hover {
+    background: ##c8d8ff;
 }
 
 footer {
-    background: #1a2332;
-    color: #b0bccd;
+    background: ##1a2332;
+    color: ##b0bccd;
     text-align: center;
     padding: 18px 14px;
 }

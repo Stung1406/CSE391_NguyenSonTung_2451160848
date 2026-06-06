@@ -37,25 +37,25 @@ p.text.highlight {
 }
 
 /* Rule 7: ID selector */
-#demo { 
+##demo { 
     color: purple; 
     /* Specificity: 1,0,0 */
 }
 
 /* Rule 8: Element + ID selector */
-p#demo { 
+p##demo { 
     color: brown; 
     /* Specificity: 1,0,1 */
 }
 
 /* Rule 9: ID selector + single class */
-#demo.text { 
+##demo.text { 
     color: pink; 
     /* Specificity: 1,1,0 */
 }
 
 /* Rule 10: ID selector + two classes (HIGHEST SPECIFICITY) */
-#demo.text.highlight { 
+##demo.text.highlight { 
     color: darkgreen; 
     /* Specificity: 1,2,0 */
 }

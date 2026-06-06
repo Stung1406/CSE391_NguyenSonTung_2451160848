@@ -6,10 +6,10 @@ function Footer() {
           <div className="footer-logo">YourName</div>
           <p className="footer-tagline">Full-Stack Developer</p>
           <div className="social-links">
-            <a href="#" className="social-link">
+            <a href="##" className="social-link">
               <i className="bi bi-github"></i>
             </a>
-            <a href="#" className="social-link">
+            <a href="##" className="social-link">
               <i className="bi bi-linkedin"></i>
             </a>
           </div>

@@ -1,14 +1,14 @@
-# Exercise 1.3 — Portfolio Grid Gallery
+## Exercise 1.3 — Portfolio Grid Gallery
 
-## 🎬 Opening Scenario
+#### 🎬 Opening Scenario
 
 *Designer muốn portfolio gallery với grid layout, hover effects, và lightbox xem ảnh lớn — tất cả chỉ dùng HTML/CSS (không JavaScript).*
 
 ---
 
-## 📋 Requirements
+#### 📋 Requirements
 
-### 1. Portfolio Grid
+###### 1. Portfolio Grid
 
 ```html
 <section id="portfolio" class="portfolio-section">
@@ -39,7 +39,7 @@
 - 6 portfolio items (3 web, 2 mobile, 1 design)
 - Hover: image zoom + overlay với text
 
-### 2. CSS-Only Lightbox
+###### 2. CSS-Only Lightbox
 
 **Yêu cầu:**
 - Click vào image → hiển thị fullscreen overlay
@@ -48,21 +48,21 @@
 
 ```html
 <!-- Lightbox structure -->
-<a href="#lightbox-1" class="lightbox-link">
+<a href="##lightbox-1" class="lightbox-link">
     <img src="..." alt="...">
 </a>
 
 <div id="lightbox-1" class="lightbox">
     <img src="..." alt="...">
-    <a href="#" class="lightbox-close">&times;</a>
+    <a href="##" class="lightbox-close">&times;</a>
 </div>
 ```
 
 ---
 
-## 🎨 Design Specs
+#### 🎨 Design Specs
 
-### Grid Layout
+###### Grid Layout
 ```css
 .portfolio-grid {
     display: grid;
@@ -71,7 +71,7 @@
 }
 ```
 
-### Hover Effect
+###### Hover Effect
 ```css
 .portfolio-item {
     position: relative;
@@ -107,7 +107,7 @@
 }
 ```
 
-### CSS Lightbox
+###### CSS Lightbox
 ```css
 .lightbox {
     position: fixed;
@@ -140,9 +140,9 @@
 
 ---
 
-## 🐛 Hints
+#### 🐛 Hints
 
-### Image Aspect Ratio
+###### Image Aspect Ratio
 ```css
 .portfolio-item img {
     aspect-ratio: 4/3;
@@ -151,7 +151,7 @@
 }
 ```
 
-### Overlay Gradient
+###### Overlay Gradient
 ```css
 .portfolio-overlay {
     background: linear-gradient(
@@ -163,7 +163,7 @@
 }
 ```
 
-### Filter Buttons (CSS-only hover)
+###### Filter Buttons (CSS-only hover)
 ```css
 .filter-btn {
     background: transparent;
@@ -183,7 +183,7 @@
 
 ---
 
-## ✅ Success Criteria
+#### ✅ Success Criteria
 
 - [ ] Grid responsive (3/2/1 columns)
 - [ ] Hover zoom effect hoạt động
@@ -194,7 +194,7 @@
 
 ---
 
-## 📝 Commit Messages Expected
+#### 📝 Commit Messages Expected
 
 ```
 [FEATURE] Build portfolio grid layout

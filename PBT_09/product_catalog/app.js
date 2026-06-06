@@ -192,7 +192,7 @@ function openModal(product) {
   name.textContent = product.name;
 
   const rating = document.createElement("p");
-  rating.style.color = "#f39c12";
+  rating.style.color = "##f39c12";
   rating.textContent = renderStars(product.rating);
 
   const stock = document.createElement("p");
@@ -230,7 +230,7 @@ function closeModal() {
 // ─── Build UI ─────────────────────────────────────────────────────────────────
 
 function buildUI() {
-  const app = document.querySelector("#app");
+  const app = document.querySelector("##app");
 
   // Header
   const header = document.createElement("div");
