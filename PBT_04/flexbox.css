@@ -1,15 +1,15 @@
 body {
 	margin: 0;
 	font-family: Arial, sans-serif;
-	background: ##f5f5f5;
+	background: #f5f5f5;
 }
 
 .navbar {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	background: ##222;
-	color: ##fff;
+	background: #222;
+	color: #fff;
 	padding: 0 32px;
 	height: 64px;
 }
@@ -30,7 +30,7 @@ body {
 	margin: 0 18px;
 }
 .menu a {
-	color: ##fff;
+	color: #fff;
 	text-decoration: none;
 	font-size: 1rem;
 	padding: 8px 0;
@@ -38,8 +38,8 @@ body {
 	border-bottom: 2px solid transparent;
 }
 .menu a:hover {
-	color: ##ff5252;
-	border-bottom: 2px solid ##ff5252;
+	color: #ff5252;
+	border-bottom: 2px solid #ff5252;
 }
 .auth {
 	display: flex;
@@ -47,8 +47,8 @@ body {
 	gap: 12px;
 }
 .auth button {
-	background: ##fff;
-	color: ##222;
+	background: #fff;
+	color: #222;
 	border: none;
 	padding: 8px 18px;
 	border-radius: 20px;
@@ -57,8 +57,8 @@ body {
 	transition: background 0.2s, color 0.2s;
 }
 .auth button:hover {
-	background: ##ff5252;
-	color: ##fff;
+	background: #ff5252;
+	color: #fff;
 }
 
 .card-container {
@@ -70,7 +70,7 @@ body {
 	justify-content: flex-start;
 }
 .card {
-	background: ##fff;
+	background: #fff;
 	border-radius: 8px;
 	box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 	flex: 0 0 calc(25% - 20px);
@@ -88,8 +88,8 @@ body {
 }
 .card .btn {
 	margin-top: auto;
-	background: ##222;
-	color: ##fff;
+	background: #222;
+	color: #fff;
 	border: none;
 	padding: 10px 24px;
 	border-radius: 20px;
@@ -98,7 +98,7 @@ body {
 	transition: background 0.2s;
 }
 .card .btn:hover {
-	background: ##ff5252;
+	background: #ff5252;
 }
 .card:hover {
 	transform: translateY(-5px);

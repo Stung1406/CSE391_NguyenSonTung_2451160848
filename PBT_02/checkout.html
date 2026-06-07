@@ -9,8 +9,8 @@
     <header>
       <h1>Form đặt hàng</h1>
       <nav>
-        <a href="##gio_hang">Giỏ hàng</a>
-        <a href="##thanh_toan">Form thanh toán</a>
+        <a href="#gio_hang">Giỏ hàng</a>
+        <a href="#thanh_toan">Form thanh toán</a>
       </nav>
     </header>
 
@@ -27,7 +27,7 @@
       </datalist>
 
       <section id="gio_hang">
-        <table border="1" cellspacing="0" cellpadding="1">
+        <table>
           <thead>
             <tr>
               <th>STT</th>
@@ -78,45 +78,55 @@
 
       <section id="thanh_toan">
         <h2>Form thanh toán</h2>
-        <form action="##">
-          <input type="radio" name="phuong_thuc" id="cod" value="cod" />
-          <label for="cod">COD</label>
+        <form action="#">
+          <fieldset>
+            <legend>Phương thức thanh toán</legend>
+            <input type="radio" name="phuong_thuc" id="cod" value="cod" />
+            <label for="cod">COD</label>
 
-          <input type="radio" name="phuong_thuc" id="chuyen_khoan" value="chuyen_khoan" />
-          <label for="chuyen_khoan">Chuyển khoản</label>
+            <input type="radio" name="phuong_thuc" id="chuyen_khoan" value="chuyen_khoan" />
+            <label for="chuyen_khoan">Chuyển khoản</label>
 
-          <input type="radio" name="phuong_thuc" id="vi_dien_tu" value="vi_dien_tu" />
-          <label for="vi_dien_tu">Ví điện tử</label>
+            <input type="radio" name="phuong_thuc" id="vi_dien_tu" value="vi_dien_tu" />
+            <label for="vi_dien_tu">Ví điện tử</label>
+          </fieldset>
 
-          <br /><br />
-          <label for="coupon">Mã giảm giá</label>
-          <input type="text" name="coupon" id="coupon" pattern="SALE[0-9]{4}" />
+          <div class="form-group">
+            <label for="coupon">Mã giảm giá</label>
+            <input type="text" name="coupon" id="coupon" pattern="SALE[0-9]{4}" />
+          </div>
 
-          <label for="note">Ghi chú</label>
-          <textarea name="note" id="note"></textarea>
+          <div class="form-group">
+            <label for="note">Ghi chú</label>
+            <textarea name="note" id="note"></textarea>
+          </div>
 
-          <h2>Thông tin giao hàng</h2>
+          <fieldset>
+            <legend>Thông tin giao hàng</legend>
 
-          <label for="ngay_giao_hang">Ngày giao hàng</label>
-          <input type="date" name="ngay_giao_hang" id="ngay_giao_hang" min="2026-04-29" />
+            <label for="ngay_giao_hang">Ngày giao hàng</label>
+            <input type="date" name="ngay_giao_hang" id="ngay_giao_hang" min="2026-04-29" />
 
-          <label for="khung_gio">Khung giờ</label>
-          <select name="khung_gio" id="khung_gio">
-            <option value="sang">Sáng 8-12h</option>
-            <option value="chieu">Chiều 14-18h</option>
-            <option value="toi">Tối 18-21h</option>
-          </select>
+            <label for="khung_gio">Khung giờ</label>
+            <select name="khung_gio" id="khung_gio">
+              <option value="sang">Sáng 8-12h</option>
+              <option value="chieu">Chiều 14-18h</option>
+              <option value="toi">Tối 18-21h</option>
+            </select>
 
-          <label for="thoi_gian">Thời gian giao hàng</label>
-          <input type="range" name="thoi_gian" id="thoi_gian" min="1" max="7" step="1" />
+            <label for="thoi_gian">Thời gian giao hàng</label>
+            <input type="range" name="thoi_gian" id="thoi_gian" min="1" max="7" step="1" />
+          </fieldset>
 
-          <br /><br />
-          <label for="diem">Điểm tích lũy:</label>
-          <meter id="diem" value="70" min="0" max="100" low="30" high="80" optimum="90"></meter>
-          <span>70%</span>
+          <div class="form-group">
+            <label for="diem">Điểm tích lũy:</label>
+            <meter id="diem" value="70" min="0" max="100" low="30" high="80" optimum="90"></meter>
+            <span>70%</span>
+          </div>
 
-          <br /><br />
-          <button type="submit" aria-label="Xác nhận đặt hàng">Đặt hàng</button>
+          <div class="form-actions">
+            <button type="submit" aria-label="Xác nhận đặt hàng">Đặt hàng</button>
+          </div>
         </form>
       </section>
     </main>

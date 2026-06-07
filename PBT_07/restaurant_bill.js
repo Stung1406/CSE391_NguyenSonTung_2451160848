@@ -1,4 +1,6 @@
-let menu = [
+"use strict";
+
+const menu = [
     { ten: "Phở bò", gia: 65000, soLuong: 2 },
     { ten: "Trà đá", gia: 5000, soLuong: 3 },
     { ten: "Bún chả", gia: 55000, soLuong: 1 }
@@ -18,17 +20,17 @@ if (tong > 1000000) {
     giam = tong * 0.10;
 }
 
-let today = new Date().getDay();
+const today = new Date().getDay();
 
 if (today === 3) {
     giam += tong * 0.05;
 }
 
-let sauGiam = tong - giam;
+const sauGiam = tong - giam;
 
-let vat = sauGiam * 0.08;
+const vat = sauGiam * 0.08;
 
-let coTip = true;
+const coTip = true;
 
 let tip = 0;
 
@@ -36,7 +38,7 @@ if (coTip) {
     tip = sauGiam * 0.05;
 }
 
-let thanhToan = sauGiam + vat + tip;
+const thanhToan = sauGiam + vat + tip;
 
 console.log("╔══════════════════════════════════════╗");
 console.log("║         HÓA ĐƠN NHÀ HÀNG            ║");

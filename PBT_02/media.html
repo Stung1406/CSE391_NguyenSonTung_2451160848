@@ -3,72 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Trang Multimedia</title>
   </head>
   <body>
     <header>
       <h1>Trang Multimedia</h1>
 
       <svg width="80" height="80" xmlns="http://www.w3.org/2000/svg">
-        <rect width="80" height="80" rx="12" fill="##F5F5F5" />
-        <circle cx="40" cy="40" r="20" fill="##BC002D" />
+        <rect width="80" height="80" rx="12" fill="#F5F5F5" />
+        <circle cx="40" cy="40" r="20" fill="#BC002D" />
       </svg>
       <nav>
-        <a href="##top">Sản phẩm nổi bật</a>
-        <a href="##video_gioi_thieu">Video giới thiệu</a>
-        <a href="##video_san_pham">Video sản phẩm</a>
-        <a href="##nhac_nen">Nhạc nền</a>
+        <a href="#top">Sản phẩm nổi bật</a>
+        <a href="#video_gioi_thieu">Video giới thiệu</a>
+        <a href="#video_san_pham">Video sản phẩm</a>
+        <a href="#nhac_nen">Nhạc nền</a>
       </nav>
     </header>
 
-    <section id="top">
-      <h2>Sản phẩm nổi bật</h2>
-      <figure>
-        <img src="https://placehold.co/200x150" alt="iPhone 16 Pro màu titan tự nhiên" loading="lazy" style="max-width: 100%; height: auto" />
-        <figcaption>iPhone 16 Pro — 28.990.000đ</figcaption>
-      </figure>
+    <main>
+      <section id="top">
+        <h2>Sản phẩm nổi bật</h2>
+        <figure>
+          <img src="https://placehold.co/200x150" alt="iPhone 16 Pro màu titan tự nhiên" loading="lazy" />
+          <figcaption>iPhone 16 Pro — 28.990.000đ</figcaption>
+        </figure>
 
-      <figure>
-        <img src="https://placehold.co/200x150" alt="MacBook Air M3 màu xám vũ trụ" loading="lazy" style="max-width: 100%; height: auto" />
-        <figcaption>MacBook Air M3— 32.990.000đ</figcaption>
-      </figure>
+        <figure>
+          <img src="https://placehold.co/200x150" alt="MacBook Air M3 màu xám vũ trụ" loading="lazy" />
+          <figcaption>MacBook Air M3— 32.990.000đ</figcaption>
+        </figure>
 
-      <figure>
-        <img src="https://placehold.co/200x150" alt="AirPods Pro thế hệ 2 màu trắng" loading="lazy" style="max-width: 100%; height: auto" />
-        <figcaption>AirPods Pro 2 — 6.490.000đ</figcaption>
-      </figure>
-    </section>
+        <figure>
+          <img src="https://placehold.co/200x150" alt="AirPods Pro thế hệ 2 màu trắng" loading="lazy" />
+          <figcaption>AirPods Pro 2 — 6.490.000đ</figcaption>
+        </figure>
+      </section>
 
-    <section id="video_gioi_thieu">
-      <h2>Video giới thiệu</h2>
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/kTKRLi-9hXU?si=4XoIL87APkt79iHy"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
-      ></iframe>
-    </section>
+      <section id="video_gioi_thieu">
+        <h2>Video giới thiệu</h2>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/kTKRLi-9hXU?si=4XoIL87APkt79iHy"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </section>
 
-    <section id="video_san_pham">
-      <h2>Video về sản phẩm</h2>
-      <video controls poster="https://placehold.co/640x360" style="max-width: 100%; height: auto">
-        <source src="iphone16-intro.mp4" type="video/mp4" />
-        <source src="iphone16-intro.webm" type="video/webm" />
-        Trình duyệt của bạn không hỗ trợ thẻ video.
-      </video>
-    </section>
+      <section id="video_san_pham">
+        <h2>Video về sản phẩm</h2>
+        <video controls poster="https://placehold.co/640x360">
+          <source src="iphone16-intro.mp4" type="video/mp4" />
+          <source src="iphone16-intro.webm" type="video/webm" />
+          Trình duyệt của bạn không hỗ trợ thẻ video.
+        </video>
+      </section>
 
-    <section id="nhac_nen">
-      <h2>Nhạc nền</h2>
-      <audio controls>
-        <source src="background-music.mp3" type="audio/mpeg" />
-        <source src="background-music.ogg" type="audio/ogg" />
-        Trình duyệt của bạn không hỗ trợ thẻ audio.
-      </audio>
-    </section>
+      <section id="nhac_nen">
+        <h2>Nhạc nền</h2>
+        <audio controls>
+          <source src="background-music.mp3" type="audio/mpeg" />
+          <source src="background-music.ogg" type="audio/ogg" />
+          Trình duyệt của bạn không hỗ trợ thẻ audio.
+        </audio>
+      </section>
+    </main>
   </body>
 </html>

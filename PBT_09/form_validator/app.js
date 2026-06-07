@@ -1,33 +1,33 @@
 // ─── DOM refs ─────────────────────────────────────────────────────────────────
 
-const nameInput = document.querySelector("##name");
-const nameIcon = document.querySelector("##nameIcon");
-const nameError = document.querySelector("##nameError");
+const nameInput = document.querySelector("#name");
+const nameIcon = document.querySelector("#nameIcon");
+const nameError = document.querySelector("#nameError");
 
-const emailInput = document.querySelector("##email");
-const emailIcon = document.querySelector("##emailIcon");
-const emailError = document.querySelector("##emailError");
+const emailInput = document.querySelector("#email");
+const emailIcon = document.querySelector("#emailIcon");
+const emailError = document.querySelector("#emailError");
 
-const passwordInput = document.querySelector("##password");
-const passwordIcon = document.querySelector("##passwordIcon");
-const passwordError = document.querySelector("##passwordError");
-const strengthFill = document.querySelector("##strengthFill");
-const strengthLabel = document.querySelector("##strengthLabel");
+const passwordInput = document.querySelector("#password");
+const passwordIcon = document.querySelector("#passwordIcon");
+const passwordError = document.querySelector("#passwordError");
+const strengthFill = document.querySelector("#strengthFill");
+const strengthLabel = document.querySelector("#strengthLabel");
 
-const confirmInput = document.querySelector("##confirm");
-const confirmIcon = document.querySelector("##confirmIcon");
-const confirmError = document.querySelector("##confirmError");
+const confirmInput = document.querySelector("#confirm");
+const confirmIcon = document.querySelector("#confirmIcon");
+const confirmError = document.querySelector("#confirmError");
 
-const phoneInput = document.querySelector("##phone");
-const phoneIcon = document.querySelector("##phoneIcon");
-const phoneError = document.querySelector("##phoneError");
+const phoneInput = document.querySelector("#phone");
+const phoneIcon = document.querySelector("#phoneIcon");
+const phoneError = document.querySelector("#phoneError");
 
-const submitBtn = document.querySelector("##submitBtn");
-const form = document.querySelector("##registerForm");
+const submitBtn = document.querySelector("#submitBtn");
+const form = document.querySelector("#registerForm");
 
-const modalOverlay = document.querySelector("##modalOverlay");
-const modalInfo = document.querySelector("##modalInfo");
-const modalClose = document.querySelector("##modalClose");
+const modalOverlay = document.querySelector("#modalOverlay");
+const modalInfo = document.querySelector("#modalInfo");
+const modalClose = document.querySelector("#modalClose");
 
 // ─── Validation state ─────────────────────────────────────────────────────────
 
@@ -137,22 +137,22 @@ passwordInput.addEventListener("input", () => {
 
     if (strength === 1) {
       strengthFill.style.width = "33%";
-      strengthFill.style.background = "##e74c3c";
-      strengthLabel.style.color = "##e74c3c";
+      strengthFill.style.background = "#e74c3c";
+      strengthLabel.style.color = "#e74c3c";
       strengthLabel.textContent = "Yếu";
       setFieldState(passwordInput, passwordIcon, passwordError, false, "Mật khẩu quá yếu.");
       valid.password = false;
     } else if (strength === 2) {
       strengthFill.style.width = "66%";
-      strengthFill.style.background = "##f39c12";
-      strengthLabel.style.color = "##f39c12";
+      strengthFill.style.background = "#f39c12";
+      strengthLabel.style.color = "#f39c12";
       strengthLabel.textContent = "Trung bình";
       setFieldState(passwordInput, passwordIcon, passwordError, true, "");
       valid.password = true;
     } else {
       strengthFill.style.width = "100%";
-      strengthFill.style.background = "##27ae60";
-      strengthLabel.style.color = "##27ae60";
+      strengthFill.style.background = "#27ae60";
+      strengthLabel.style.color = "#27ae60";
       strengthLabel.textContent = "Mạnh";
       setFieldState(passwordInput, passwordIcon, passwordError, true, "");
       valid.password = true;

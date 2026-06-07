@@ -6,7 +6,7 @@
 
 body {
   font-family: sans-serif;
-  background: ##f5f5f5;
+  background: #f5f5f5;
 }
 
 /* ── Layout chính ── */
@@ -28,7 +28,7 @@ body {
 .header {
   grid-area: header;
   grid-column: 1 / -1;
-  background: ##1a1a2e;
+  background: #1a1a2e;
   color: white;
   height: 60px;
   display: flex;
@@ -39,7 +39,7 @@ body {
 }
 
 .header nav a {
-  color: ##ccc;
+  color: #ccc;
   text-decoration: none;
   margin-left: 20px;
 }
@@ -52,7 +52,7 @@ body {
 .hero {
   grid-area: hero;
   grid-column: 1 / -1;
-  background: ##16213e;
+  background: #16213e;
   color: white;
   padding: 32px;
   border-radius: 6px;
@@ -72,13 +72,13 @@ body {
 }
 
 .hero__text p {
-  color: ##aaa;
+  color: #aaa;
   margin-bottom: 16px;
 }
 
 .hero__text a {
   background: white;
-  color: ##1a1a2e;
+  color: #1a1a2e;
   padding: 8px 20px;
   border-radius: 4px;
   text-decoration: none;
@@ -102,7 +102,7 @@ body {
   margin-bottom: 6px;
 }
 .hero__card .price {
-  color: ##fbbf24;
+  color: #fbbf24;
   font-weight: bold;
 }
 
@@ -110,7 +110,7 @@ body {
 .sidebar {
   grid-area: sidebar;
   background: white;
-  border: 1px solid ##ddd;
+  border: 1px solid #ddd;
   border-radius: 6px;
   padding: 16px;
   height: fit-content;
@@ -121,7 +121,7 @@ body {
 .sidebar h3 {
   font-size: 13px;
   text-transform: uppercase;
-  color: ##888;
+  color: #888;
   margin-bottom: 16px;
 }
 
@@ -139,7 +139,7 @@ body {
   align-items: center;
   gap: 8px;
   font-size: 13px;
-  color: ##555;
+  color: #555;
   margin-bottom: 6px;
   cursor: pointer;
 }
@@ -162,7 +162,7 @@ body {
 
 .card {
   background: white;
-  border: 1px solid ##ddd;
+  border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
   display: flex;
@@ -179,7 +179,7 @@ body {
 
 .card__img {
   height: 120px;
-  background: ##f0f0f0;
+  background: #f0f0f0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -200,7 +200,7 @@ body {
 }
 
 .card__price {
-  color: ##e53e3e;
+  color: #e53e3e;
   font-size: 14px;
 }
 
@@ -212,7 +212,7 @@ body {
 .card__btn button {
   width: 100%;
   padding: 8px;
-  background: ##1a1a2e;
+  background: #1a1a2e;
   color: white;
   border: none;
   border-radius: 4px;
@@ -221,7 +221,7 @@ body {
 }
 
 .card__btn button:hover {
-  background: ##2d2d4e;
+  background: #2d2d4e;
 }
 
 /* ── Ads ── */
@@ -247,8 +247,8 @@ body {
 .footer {
   grid-area: footer;
   grid-column: 1 / -1;
-  background: ##1a1a2e;
-  color: ##aaa;
+  background: #1a1a2e;
+  color: #aaa;
   padding: 20px;
   border-radius: 6px;
   text-align: center;

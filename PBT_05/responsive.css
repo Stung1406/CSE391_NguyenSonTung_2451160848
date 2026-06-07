@@ -7,8 +7,8 @@
 body {
   font-family: "Inter", Arial, sans-serif;
   font-size: 14px;
-  color: ##1a202c;
-  background: ##f7fafc;
+  color: #1a202c;
+  background: #f7fafc;
 }
 
 a {
@@ -27,7 +27,7 @@ img {
   align-items: center;
   justify-content: space-between;
   padding: 12px 16px;
-  background: ##1a202c;
+  background: #1a202c;
   color: white;
   position: sticky;
   top: 0;
@@ -50,8 +50,8 @@ img {
 .footer {
   text-align: center;
   padding: 16px;
-  background: ##1a202c;
-  color: ##a0aec0;
+  background: #1a202c;
+  color: #a0aec0;
 }
 
 /* ===== HEADER: MOBILE (hamburger) ===== */
@@ -78,7 +78,7 @@ img {
   top: 100%;
   left: 0;
   right: 0;
-  background: ##2d3748;
+  background: #2d3748;
   padding: 16px;
   gap: 12px;
 }
@@ -94,10 +94,10 @@ img {
 }
 
 .header__nav-link {
-  color: ##e2e8f0;
+  color: #e2e8f0;
   font-size: 14px;
   padding: 8px 0;
-  border-bottom: 1px solid ##4a5568;
+  border-bottom: 1px solid #4a5568;
 }
 
 /* ===== PRODUCT GRID: MOBILE DEFAULT (1 cột) ===== */
@@ -129,13 +129,13 @@ img {
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 8px;
-  color: ##2d3748;
+  color: #2d3748;
 }
 
 .product-card__price {
   font-size: 16px;
   font-weight: 700;
-  color: ##e53e3e;
+  color: #e53e3e;
 }
 
 /* ===== FOOTER TEXT ===== */
@@ -177,7 +177,7 @@ img {
   }
 
   .header__nav-link:hover {
-    color: ##667eea;
+    color: #667eea;
   }
 
   .header__logo a {
@@ -190,7 +190,7 @@ img {
     gap: 16px;
     padding: 12px 24px;
     background: white;
-    border-bottom: 1px solid ##e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
   }
 
   .sidebar__filter {
@@ -201,7 +201,7 @@ img {
     font-size: 14px;
     font-weight: 700;
     margin-bottom: 8px;
-    color: ##2d3748;
+    color: #2d3748;
   }
 
   .sidebar__list {
@@ -215,13 +215,13 @@ img {
     font-size: 13px;
     display: inline-block;
     padding: 6px 12px;
-    background: ##edf2f7;
+    background: #edf2f7;
     border-radius: 16px;
-    color: ##4a5568;
+    color: #4a5568;
   }
 
   .sidebar__list li a:hover {
-    background: ##667eea;
+    background: #667eea;
     color: white;
   }
 
@@ -293,7 +293,7 @@ img {
     padding: 20px 16px;
     background: white;
     border-bottom: none;
-    border-right: 1px solid ##e2e8f0;
+    border-right: 1px solid #e2e8f0;
   }
 
   .sidebar__title {
@@ -338,7 +338,7 @@ img {
   }
 
   .ads-bar__item {
-    background: linear-gradient(135deg, ##667eea, ##764ba2);
+    background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
     padding: 16px;
     border-radius: 8px;

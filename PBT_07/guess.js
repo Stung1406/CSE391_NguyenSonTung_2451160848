@@ -1,8 +1,9 @@
+"use strict";
 // ===== Bài B3: Mini Game - Đoán Số =====
 
 let secretNumber = 0;
 let attempts = 0;
-let maxAttempts = 7;
+const maxAttempts = 7;
 let guessedNumbers = [];
 let gameActive = false;
 

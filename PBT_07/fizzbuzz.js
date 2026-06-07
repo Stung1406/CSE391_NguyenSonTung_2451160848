@@ -1,3 +1,4 @@
+"use strict";
 // ===== Bài B4: FizzBuzz nâng cao =====
 
 console.log("=== VERSION 1: CLASSIC FIZZBUZZ (1-100) ===\n");

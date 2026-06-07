@@ -1,3 +1,4 @@
+"use strict";
 // ===== Câu A1: var / let / const =====
 
 console.log("=== TESTING var / let / const ===\n");

@@ -6,14 +6,14 @@
 
 body {
   font-family: sans-serif;
-  background: ##111;
-  color: ##eee;
+  background: #111;
+  color: #eee;
   min-height: 100vh;
 }
 
 /* Focus ring — visible for all interactive elements */
 :focus-visible {
-  outline: 2px solid ##4a90e2;
+  outline: 2px solid #4a90e2;
   outline-offset: 3px;
   border-radius: 3px;
 }
@@ -24,8 +24,8 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
-  background: ##1a1a1a;
-  border-bottom: 1px solid ##2a2a2a;
+  background: #1a1a1a;
+  border-bottom: 1px solid #2a2a2a;
 }
 
 .header h1 {
@@ -33,9 +33,9 @@ body {
 }
 
 .cmd-hint-btn {
-  background: ##2a2a2a;
-  border: 1px solid ##3a3a3a;
-  color: ##aaa;
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  color: #aaa;
   padding: 6px 14px;
   border-radius: 6px;
   cursor: pointer;
@@ -44,8 +44,8 @@ body {
 }
 
 .cmd-hint-btn:hover {
-  background: ##333;
-  color: ##eee;
+  background: #333;
+  color: #eee;
 }
 
 /* Hints */
@@ -53,18 +53,18 @@ body {
   display: flex;
   gap: 16px;
   padding: 10px 24px;
-  background: ##161616;
-  border-bottom: 1px solid ##222;
+  background: #161616;
+  border-bottom: 1px solid #222;
   flex-wrap: wrap;
 }
 
 .hints span {
   font-size: 12px;
-  color: ##666;
-  background: ##1e1e1e;
+  color: #666;
+  background: #1e1e1e;
   padding: 3px 8px;
   border-radius: 4px;
-  border: 1px solid ##2a2a2a;
+  border: 1px solid #2a2a2a;
 }
 
 /* Gallery grid */
@@ -85,13 +85,13 @@ body {
   transition:
     transform 0.15s,
     border-color 0.15s;
-  background: ##1e1e1e;
+  background: #1e1e1e;
 }
 
 .gallery-item:hover,
 .gallery-item:focus-visible {
   transform: scale(1.03);
-  border-color: ##4a90e2;
+  border-color: #4a90e2;
   outline: none;
 }
 
@@ -107,7 +107,7 @@ body {
   top: 6px;
   left: 8px;
   background: rgba(0, 0, 0, 0.6);
-  color: ##fff;
+  color: #fff;
   font-size: 11px;
   padding: 2px 6px;
   border-radius: 3px;
@@ -120,7 +120,7 @@ body {
   left: 0;
   right: 0;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-  color: ##fff;
+  color: #fff;
   font-size: 12px;
   padding: 16px 8px 6px;
 }
@@ -130,12 +130,12 @@ body {
   text-align: center;
   padding: 8px;
   font-size: 13px;
-  color: ##666;
+  color: #666;
   min-height: 30px;
 }
 
 .slideshow-status.playing {
-  color: ##27ae60;
+  color: #27ae60;
 }
 
 /* Modal */
@@ -167,7 +167,7 @@ body {
   right: 20px;
   background: rgba(255, 255, 255, 0.1);
   border: none;
-  color: ##fff;
+  color: #fff;
   font-size: 28px;
   width: 40px;
   height: 40px;
@@ -186,7 +186,7 @@ body {
 .modal-nav {
   background: rgba(255, 255, 255, 0.1);
   border: none;
-  color: ##fff;
+  color: #fff;
   font-size: 24px;
   width: 48px;
   height: 48px;
@@ -204,7 +204,7 @@ body {
   text-align: center;
 }
 
-##modalImg {
+#modalImg {
   max-width: 70vw;
   max-height: 70vh;
   border-radius: 6px;
@@ -212,13 +212,13 @@ body {
 }
 
 .modal-caption {
-  color: ##ccc;
+  color: #ccc;
   font-size: 14px;
   margin-top: 10px;
 }
 
 .modal-counter {
-  color: ##666;
+  color: #666;
   font-size: 13px;
   margin-top: 4px;
 }
@@ -240,8 +240,8 @@ body {
 }
 
 .cmd-palette {
-  background: ##1e1e1e;
-  border: 1px solid ##3a3a3a;
+  background: #1e1e1e;
+  border: 1px solid #3a3a3a;
   border-radius: 8px;
   width: 100%;
   max-width: 480px;
@@ -253,15 +253,15 @@ body {
   width: 100%;
   background: transparent;
   border: none;
-  border-bottom: 1px solid ##2a2a2a;
-  color: ##eee;
+  border-bottom: 1px solid #2a2a2a;
+  color: #eee;
   font-size: 16px;
   padding: 16px;
   outline: none;
 }
 
 .cmd-input::placeholder {
-  color: ##555;
+  color: #555;
 }
 
 .cmd-list {
@@ -277,8 +277,8 @@ body {
   padding: 12px 16px;
   cursor: pointer;
   font-size: 14px;
-  color: ##ccc;
-  border-bottom: 1px solid ##252525;
+  color: #ccc;
+  border-bottom: 1px solid #252525;
   transition: background 0.1s;
 }
 
@@ -288,8 +288,8 @@ body {
 
 .cmd-item:hover,
 .cmd-item.active {
-  background: ##2a2a2a;
-  color: ##fff;
+  background: #2a2a2a;
+  color: #fff;
 }
 
 .cmd-item .cmd-icon {
@@ -301,13 +301,13 @@ body {
 
 .cmd-item .cmd-desc {
   font-size: 12px;
-  color: ##555;
+  color: #555;
   margin-left: auto;
 }
 
 .cmd-empty {
   padding: 20px 16px;
-  color: ##555;
+  color: #555;
   font-size: 14px;
   text-align: center;
 }

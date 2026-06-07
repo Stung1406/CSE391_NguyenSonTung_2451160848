@@ -1,5 +1,12 @@
+"use strict";
 
-
+/**
+ * Thực hiện phép tính toán học cơ bản.
+ * @param {number} num1 - Số thứ nhất
+ * @param {string} operator - Phép toán (+, -, *, /, %, **)
+ * @param {number} num2 - Số thứ hai
+ * @returns {number|string} Kết quả hoặc thông báo lỗi
+ */
 function calculate(num1, operator, num2) {
     if (typeof num1 !== 'number' || typeof num2 !== 'number') {
         return "Lỗi: Input không phải số";

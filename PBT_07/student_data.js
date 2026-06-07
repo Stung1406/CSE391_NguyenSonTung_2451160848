@@ -1,3 +1,4 @@
+"use strict";
 
 const students = [
     { name: "An", math: 8, physics: 7, cs: 9, gender: "M" },
@@ -85,7 +86,7 @@ for (let i = 1; i < studentResults.length; i++) {
     }
 }
 
-console.log("=== SV NỔITRỘI ===");
+console.log("=== SV NỔI TRỘI ===");
 console.log(`Điểm cao nhất: ${maxStudent.name} (${maxStudent.average})`);
 console.log(`Điểm thấp nhất: ${minStudent.name} (${minStudent.average})`);
 console.log("");

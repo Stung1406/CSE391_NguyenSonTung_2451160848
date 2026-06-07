@@ -1,3 +1,5 @@
+"use strict";
+
 function createCart() {
   let items = [];
   let discount = { type: null, value: 0 };
@@ -49,7 +51,7 @@ function createCart() {
     },
 
     printCart() {
-      const line = "─".repeat(62);
+      const line = "─".repeat(61);
       const top = "┌" + line + "┐";
       const mid = "├" + line + "┤";
       const bot = "└" + line + "┘";
@@ -58,13 +60,13 @@ function createCart() {
       const padL = (str, len) => String(str).padStart(len);
 
       console.log(top);
-      console.log(`│ ${"##"} │ ${pad("Sản phẩm", 16)} │ ${padL("SL", 2)} │ ${padL("Đơn giá", 12)} │ ${padL("Tổng", 12)} │`);
+      console.log(`│ STT │ ${pad("Sản phẩm", 16)} │ ${padL("SL", 2)} │ ${padL("Đơn giá", 12)} │ ${padL("Tổng", 12)} │`);
       console.log(mid);
 
       items.forEach((item, index) => {
         const donGia = item.price.toLocaleString("vi-VN");
         const tong = (item.price * item.quantity).toLocaleString("vi-VN");
-        console.log(`│ ${index + 1} │ ${pad(item.name, 16)} │ ${padL(item.quantity, 2)} │ ${padL(donGia, 12)} │ ${padL(tong, 12)} │`);
+        console.log(`│ ${padL(index + 1, 3)} │ ${pad(item.name, 16)} │ ${padL(item.quantity, 2)} │ ${padL(donGia, 12)} │ ${padL(tong, 12)} │`);
       });
 
       console.log(mid);
