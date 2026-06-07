@@ -392,3 +392,374 @@ async function loadOrderDetail() {
 | Promise States  | Pending → Fulfilled hoặc Rejected             |
 | Callback Hell   | Callback lồng nhau quá nhiều                  |
 | Async/Await     | Viết code bất đồng bộ dễ đọc hơn              |
+
+# PHẦN C — PHÂN TÍCH
+
+---
+
+## Câu C1. Error Handling Strategy
+
+### 1. Tổng quan
+
+Trong ứng dụng web thực tế, việc xử lý lỗi không chỉ dừng lại ở `try...catch`. Hệ thống cần phân biệt nhiều loại lỗi khác nhau để đưa ra phản hồi phù hợp cho người dùng:
+
+- Lỗi mạng (Network Error)
+- Lỗi từ API (HTTP Error)
+- Request Timeout
+- Retry khi request thất bại
+
+---
+
+## 1.1. Network Errors
+
+### Mô tả
+
+Khi mất kết nối Internet hoặc server không phản hồi, `fetch()` sẽ phát sinh:
+
+```javascript
+TypeError: Failed to fetch
+```
+
+Cần bắt riêng loại lỗi này để hiển thị thông báo phù hợp và cho phép người dùng thử lại.
+
+### Ví dụ
+
+```javascript
+async function getProducts() {
+  try {
+    const res = await fetch("/api/products");
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    if (error instanceof TypeError) {
+      showToast("Mất kết nối mạng. Vui lòng kiểm tra internet.");
+    } else {
+      showToast("Có lỗi xảy ra: " + error.message);
+    }
+
+    return null;
+  }
+}
+```
+
+### Kết luận
+
+- Network Error không có HTTP Status Code.
+- Cần xử lý riêng để tránh thông báo lỗi chung chung.
+
+---
+
+## 1.2. API Errors (HTTP Status Code)
+
+### Mô tả
+
+`fetch()` không tự động throw exception khi nhận mã lỗi HTTP.
+
+Ví dụ:
+
+```javascript
+404 Not Found
+500 Internal Server Error
+```
+
+Do đó cần kiểm tra:
+
+```javascript
+response.ok;
+```
+
+### Xử lý từng nhóm lỗi
+
+| Status  | Ý nghĩa           | Cách xử lý                 |
+| ------- | ----------------- | -------------------------- |
+| 400     | Bad Request       | Báo dữ liệu không hợp lệ   |
+| 401     | Unauthorized      | Xóa token, chuyển về Login |
+| 403     | Forbidden         | Thông báo không đủ quyền   |
+| 404     | Not Found         | Không tìm thấy dữ liệu     |
+| 429     | Too Many Requests | Đợi rồi thử lại            |
+| 500-503 | Server Error      | Thông báo lỗi hệ thống     |
+
+### Ví dụ
+
+```javascript
+async function handleResponse(response) {
+  if (response.ok) return response.json();
+
+  switch (response.status) {
+    case 400:
+      throw new Error("Dữ liệu gửi lên không hợp lệ.");
+
+    case 401:
+      localStorage.removeItem("token");
+      window.location.href = "/login";
+      throw new Error("Phiên đăng nhập hết hạn.");
+
+    case 403:
+      throw new Error("Bạn không có quyền thực hiện thao tác này.");
+
+    case 404:
+      throw new Error("Không tìm thấy sản phẩm.");
+
+    case 429:
+      const retryAfter = response.headers.get("Retry-After") || 10;
+      throw new Error(`Quá nhiều request. Thử lại sau ${retryAfter} giây.`);
+
+    case 500:
+    case 502:
+    case 503:
+      throw new Error("Lỗi server. Vui lòng thử lại sau.");
+
+    default:
+      throw new Error(`HTTP ${response.status}`);
+  }
+}
+```
+
+### Kết luận
+
+Việc xử lý riêng từng mã lỗi giúp người dùng hiểu chính xác nguyên nhân sự cố thay vì chỉ nhận được thông báo chung.
+
+---
+
+## 1.3. Timeout với AbortController
+
+### Vấn đề
+
+Mặc định `fetch()` có thể chờ rất lâu nếu server phản hồi chậm.
+
+### Giải pháp
+
+Sử dụng `AbortController` để tự động hủy request sau một khoảng thời gian xác định.
+
+### Ví dụ
+
+```javascript
+async function fetchWithTimeout(url, options = {}, ms = 10000) {
+  const controller = new AbortController();
+
+  const timeoutId = setTimeout(() => controller.abort(), ms);
+
+  try {
+    const response = await fetch(url, {
+      ...options,
+      signal: controller.signal,
+    });
+
+    return response;
+  } catch (error) {
+    if (error.name === "AbortError") {
+      throw new Error(`Request timeout sau ${ms / 1000} giây.`);
+    }
+
+    throw error;
+  } finally {
+    clearTimeout(timeoutId);
+  }
+}
+```
+
+### Kết luận
+
+Timeout giúp:
+
+- Tránh chờ vô hạn.
+- Cải thiện trải nghiệm người dùng.
+- Chủ động xử lý server phản hồi chậm.
+
+---
+
+## 1.4. Retry Logic
+
+### Mục tiêu
+
+Khi gặp lỗi mạng hoặc lỗi server tạm thời, hệ thống sẽ tự động gửi lại request.
+
+### Chiến lược
+
+- Retry tối đa `maxRetries` lần.
+- Không retry các lỗi 4xx.
+- Dùng Exponential Backoff:
+
+| Lần thử | Thời gian chờ |
+| ------- | ------------- |
+| 1       | 1 giây        |
+| 2       | 2 giây        |
+| 3       | 4 giây        |
+
+### Ví dụ
+
+```javascript
+async function fetchWithRetry(url, options = {}, maxRetries = 3) {
+  let lastError;
+
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      const response = await fetchWithTimeout(url, options, 10000);
+
+      if (response.status >= 400 && response.status < 500) {
+        return response;
+      }
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+
+      return response;
+    } catch (error) {
+      lastError = error;
+
+      if (attempt < maxRetries) {
+        const delay = 1000 * Math.pow(2, attempt - 1);
+
+        await new Promise((resolve) => setTimeout(resolve, delay));
+      }
+    }
+  }
+
+  throw new Error(`Thất bại sau ${maxRetries} lần thử.`);
+}
+```
+
+### Kết luận
+
+Retry giúp tăng độ ổn định của hệ thống khi gặp sự cố tạm thời từ mạng hoặc server.
+
+---
+
+# Câu C2. Promise.all vs Promise.allSettled vs Promise.race vs Promise.any
+
+## 2.1. So sánh tổng quan
+
+| Method               | Khi resolve                 | Khi reject              | Use Case                          |
+| -------------------- | --------------------------- | ----------------------- | --------------------------------- |
+| Promise.all()        | Tất cả thành công           | Chỉ cần 1 promise lỗi   | Dữ liệu phụ thuộc nhau            |
+| Promise.allSettled() | Sau khi tất cả hoàn thành   | Không bao giờ reject    | Các tác vụ độc lập                |
+| Promise.race()       | Promise hoàn thành đầu tiên | Promise đầu tiên bị lỗi | Timeout, chọn phản hồi nhanh nhất |
+| Promise.any()        | Promise thành công đầu tiên | Tất cả đều lỗi          | Nhiều nguồn dự phòng              |
+
+---
+
+## 2.2. Promise.all()
+
+### Đặc điểm
+
+- Fail Fast.
+- Chỉ thành công khi tất cả promise đều thành công.
+
+### Tình huống sử dụng
+
+Trang Checkout cần:
+
+- Thông tin người dùng
+- Giỏ hàng
+- Địa chỉ giao hàng
+
+Nếu thiếu một trong ba dữ liệu thì không thể hiển thị trang.
+
+```javascript
+const [user, cart, address] = await Promise.all([
+  getUser(),
+  getCart(),
+  getAddress(),
+]);
+```
+
+### Kết luận
+
+Dùng khi tất cả dữ liệu đều bắt buộc phải có.
+
+---
+
+## 2.3. Promise.allSettled()
+
+### Đặc điểm
+
+- Không fail fast.
+- Luôn trả kết quả của tất cả promise.
+
+### Tình huống sử dụng
+
+Dashboard gồm:
+
+- Widget đơn hàng
+- Widget gợi ý sản phẩm
+- Widget thời tiết
+
+Một widget lỗi không nên làm hỏng toàn bộ trang.
+
+```javascript
+const results = await Promise.allSettled([
+  loadOrders(),
+  loadRecommendations(),
+  loadWeather(),
+]);
+```
+
+### Kết luận
+
+Phù hợp với các module hoặc widget hoạt động độc lập.
+
+---
+
+## 2.4. Promise.race()
+
+### Đặc điểm
+
+Promise nào hoàn thành trước sẽ quyết định kết quả.
+
+### Tình huống sử dụng
+
+Giới hạn thời gian phản hồi của API thanh toán.
+
+```javascript
+const result = await Promise.race([callPaymentAPI(), timeout(5000)]);
+```
+
+### Kết luận
+
+Thường dùng để:
+
+- Timeout
+- Chọn server phản hồi nhanh nhất
+
+---
+
+## 2.5. Promise.any()
+
+### Đặc điểm
+
+Trả về promise thành công đầu tiên.
+
+Chỉ thất bại khi tất cả promise đều thất bại.
+
+### Tình huống sử dụng
+
+Tải ảnh từ nhiều CDN dự phòng.
+
+```javascript
+const imageUrl = await Promise.any([loadCDN1(), loadCDN2(), loadCDN3()]);
+```
+
+### Kết luận
+
+Thích hợp cho hệ thống có nhiều nguồn dữ liệu dự phòng.
+
+---
+
+## Tổng Kết
+
+| Nhu cầu                              | Giải pháp            |
+| ------------------------------------ | -------------------- |
+| Cần đủ tất cả dữ liệu                | Promise.all()        |
+| Xử lý từng kết quả riêng biệt        | Promise.allSettled() |
+| Timeout hoặc lấy phản hồi nhanh nhất | Promise.race()       |
+| Nhiều nguồn dự phòng                 | Promise.any()        |
+
+### Nhận xét
+
+Trong ứng dụng thực tế:
+
+- `Promise.all()` thường dùng cho dữ liệu phụ thuộc nhau.
+- `Promise.allSettled()` phù hợp cho Dashboard và Widget.
+- `Promise.race()` thường kết hợp với Timeout.
+- `Promise.any()` hữu ích khi triển khai nhiều server hoặc CDN dự phòng.
