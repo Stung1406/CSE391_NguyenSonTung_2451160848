@@ -1,8 +1,8 @@
-# CSE391 — Lập trình Web Frontend
+# CSE391 — Nền tảng phát triển web
 
 **Sinh viên:** Nguyễn Sơn Tùng  
 **MSSV:** 2451160848  
-**Học phần:** CSE391 — Lập trình Web Frontend  
+**Học phần:** CSE391 — Nền tảng phát triển web  
 
 ---
 
