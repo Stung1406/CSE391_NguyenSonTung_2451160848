@@ -47,7 +47,7 @@
 
 **Tiến độ:** Hoàn thành — 100%
 
-**Video thực hành (Phần D):** https://youtu.be/S7Rf1a0JI9g
+**Video thực hành (Phần D):** https://youtu.be/yhls1Q_Uu90
 
 ---
 
@@ -71,7 +71,7 @@
 
 **Tiến độ:** Hoàn thành — 100%
 
-**Video thực hành (Phần D):** _(chưa có link — sẽ bổ sung)_
+**Video thực hành (Phần D):** https://youtu.be/5e061aHxg-Q
 
 ---
 
